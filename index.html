@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>商品展示</title>
+    <title>Product category</title>
     <link href="//cdn.staticfile.org/layui/2.8.10/css/layui.css" rel="stylesheet">
     <style>
         .carousel-full-width-image {
@@ -26,7 +26,7 @@
 <body>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo" style="width: 100px">展示页面</div>
+        <div class="layui-logo" style="width: 200px">product infornations</div>
         <!-- 头部区域（可配合layui 已有的水平导航） -->
         <ul class="layui-nav layui-layout-left layui-hide">
             <!-- 移动端显示 -->
@@ -73,7 +73,7 @@
         </div>
         <div>
             <fieldset class="layui-elem-field layui-field-title">
-                <legend>商品列表</legend>
+                <legend>Procuct List </legend>
             </fieldset>
         </div>
 
@@ -82,11 +82,11 @@
             <div class="layui-form-item">
                 <div class="layui-input-group" style="width: 100%">
                     <div class="layui-input-split layui-input-prefix">
-                        搜索商品
+                        Search
                     </div>
-                    <input type="text" placeholder="商品名称" class="layui-input" id="ID-keyword">
+                    <input type="text" placeholder="Hair care " class="layui-input" id="ID-keyword">
                     <div class="layui-input-suffix">
-                        <button class="layui-btn layui-btn-primary" id="ID-search">搜索</button>
+                        <button class="layui-btn layui-btn-primary" id="ID-search">Hair tools</button>
                     </div>
                 </div>
             </div>
@@ -102,14 +102,14 @@
         </div>
         <div>
             <fieldset class="layui-elem-field layui-field-title">
-                <legend>联系方式</legend>
+                <legend>Contact</legend>
             </fieldset>
         </div>
         <div style="padding: 16px;text-align: center">
             <!-- 底部固定区域 -->
-            <h3>手机号：<span id="ID-phone"/></h3>
-            <h3>邮箱：<span id="ID-email"/></h3>
-            <h3>地址：<span id="ID-address"/></h3>
+            <h3>phone:<span id="ID-phone"/></h3>
+            <h3>email:<span id="ID-email"/></h3>
+            <h3>address:<span id="ID-address"/></h3>
         </div>
         <!--    </div>-->
 
@@ -133,20 +133,24 @@
             let $carousel = $("#ID-carousel-image-list");
             let $flowLazyimg = $("#ID-flow-lazyimg");
 
-            let i = 0;
+
 
             $("#ID-keyword").val("");
 
-            // 展示四条
-            data.productList.forEach(function (value, index) {
-                if (i < 4) {
-                    $carousel.append(" <div onclick=\"window.location.href='show.html?id=" + value.id + "'\">" +
-                        "<img src='" + value.img[0] + "' class=\"carousel-full-width-image\">\n" +
+            
+            
+            data.head.forEach(function(value, index){
+                $carousel.append(" <div>" +
+                        "<img src='" + value + "' class=\"carousel-full-width-image\">\n" +
                         "                </div>");
-                    i++;
-                }
+        
+            })
+
+        
+            data.productList.forEach(function (value, index) {
+  
                 $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md4 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
-                    "                    <img lay-src=\"https://unpkg.com/outeres@0.0.11/demo/wallpaper.jpg\" class=\"full-width-image\">\n" +
+                    "                    <img lay-src=\""+value.img[0]+"\" class=\"full-width-image\">\n" +
                     "                    <h4>" + value.title + "</h4>\n" +
                     "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
                     "                </div>");
