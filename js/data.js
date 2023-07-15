@@ -1,6 +1,6 @@
 let data = {
         head:[
-                "https://unpkg.com/outeres/demo/carousel/720x360-1.jpg","./image/jessica.png"
+                "https://unpkg.com/outeres/demo/carousel/720x360-1.jpg","./image/jessica.png","./image/jessica.png"
 
         ],
         productList: [
@@ -66,6 +66,11 @@ let data = {
                 ,
                 {
                         'id': 7, 'title': 'Lace tint mousse demo', 'price':'$3.5/pc', 'img': ["./image/jessica.png","./image/jessica.png","./image/jessica.png"],
+                        'detail': '这是新一个商品'
+                }
+                ,
+                {
+                        'id': 8, 'title': 'Lace tint mousse demo1', 'price':'$3.5/pc', 'img': ["./image/jessica.png","./image/jessica.png","./image/jessica.png"],
                         'detail': '这是新一个商品'
                 }
 
