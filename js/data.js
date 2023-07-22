@@ -4,7 +4,7 @@ let data = {
 
     ],
     category: [
-        "分类1", "分类2", "分类3", "分类4", "分类5"
+        "分类1", "分类2", "分类3", "分类4", "分类5","分类6"
     ],
     productList: [
         {
@@ -105,6 +105,15 @@ let data = {
             'price': '$3.5/pc', 'category': '分类2',
             'img': ["./image/jessica.png", "./image/jessica.png", "./image/jessica.png"],
             'detail': '这是新一个商品'
+        }
+        ,
+        {
+            'id': 9,
+            'title': '洗发水1',
+            'category':'分类6',
+            'price': '$3.5/pc', 
+            'img': ["./image/jessica.png", "./image/jessica.png", "./image/jessica.png"],
+            'detail': '这是新一个商品2'
         }
 
     ],
