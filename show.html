@@ -57,9 +57,15 @@
         </div>
         <div style="padding: 16px;text-align: center">
             <!-- 底部固定区域 -->
-            <h3>phone:<span id="ID-phone"/></h3>
-            <h3>email:<span id="ID-email"/></h3>
-            <h3>address:<span id="ID-address"/></h3>
+           
+            <a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img style="width: 70px;height: 70px;" src="./image/Facebook.png" title="facebook"></img></a>
+            <a href="mailto:Doralcosmetics@163.com" target="_blank"><img style="width: 70px;height: 70px;" src="./image/gemail.jpg" title="gemail"></img></a>
+            <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img style="width: 70px;height: 70px;" src="./image/WhatsApp.jpg" title="WhatsApp"></img></a>
+    
+            <a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img style="width: 70px;height: 70px;" src="./image/Instagram.webp" title="Instagram"></img></a>
+       
+        </br>
+            <h3>address:<span id="ID-address"></span></h3>
         </div>
     </div>
 
@@ -97,8 +103,11 @@
         console.log(find);
 
         $("#ID-phone").text(data.contact.Whatsapp)
+        $("#ID-email").attr('href',"mailto:"+data.contact.Email)
         $("#ID-email").text(data.contact.Email)
         $("#ID-address").text(data.contact.Address)
+        $("#ID-facebook").attr('href',data.contact.FacebookUrl)
+        $("#ID-facebook").text(data.contact.FacebookName)
 
         $("#ID-detail").text(find.detail)
         $("#ID-price").text(find.price)

@@ -34,7 +34,7 @@
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree layui-bg-gray" lay-filter="categoryNav">
-                <li class="layui-nav-item layui-this"><a href="javascript:;">全部</a></li>
+                <li class="layui-nav-item layui-this"><a href="javascript:;">All</a></li>
             </ul>
         </div>
     </div>
@@ -95,7 +95,7 @@
             }).forEach(function (value, index) {
 
                 $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md4 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
-                    "                    <img lay-src=\"https://unpkg.com/outeres@0.0.11/demo/wallpaper.jpg\" class=\"full-width-image\">\n" +
+                    "                    <img lay-src=\""+value.img[0]+"\" class=\"full-width-image\">\n" +
                     "                    <h4>" + value.title + "</h4>\n" +
                     "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
                     "                </div>");
