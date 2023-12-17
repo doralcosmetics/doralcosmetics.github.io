@@ -1,6 +1,8 @@
 let data = {
     head: [
-        "https://unpkg.com/outeres/demo/carousel/720x360-1.jpg", "./image/jessica.png", "./image/jessica.png"
+        "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg",
+        "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg",
+        "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"
 
     ],
     category: [
@@ -12,7 +14,7 @@ let data = {
             'title': 'Lace wig glue',
             'price': '$3/pc',
             'category': '分类1',
-            'img': ["https://unpkg.com/outeres/demo/carousel/720x360-1.jpg", "https://unpkg.com/outeres/demo/carousel/720x360-2.jpg", "https://unpkg.com/outeres@0.0.11/demo/wallpaper.jpg"],
+            'img': ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg", "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg", "https://unpkg.com/outeres@0.0.11/demo/wallpaper.jpg"],
             'detail': 'jQuery是一种非常流行和强大的JavaScript库。它提供了很多方便的方法来操作HTML元素和文档对象模型（DOM）。其中一项非常有用的功能是用jquery设置元素的文本。\n' +
                 '\n' +
                 '在本文中，我们将探讨如何使用jquery来设置元素的文本。我们将介绍两种方法：.text()和.html()。\n' +
@@ -27,7 +29,7 @@ let data = {
             'id': 2,
             'title': 'Lace tint spray',
             'price': '$3.5/pc', 'category': '分类1',
-            'img': ["https://unpkg.com/outeres/demo/carousel/720x360-2.jpg"],
+            'img': ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"],
             'detail': 'jQuery是一种非常流行和强大的JavaScript库。它提供了很多方便的方法来操作HTML元素和文档对象模型（DOM）。其中一项非常有用的功能是用jquery设置元素的文本。\n' +
                 '\n' +
                 '在本文中，我们将探讨如何使用jquery来设置元素的文本。我们将介绍两种方法：.text()和.html()。\n' +
@@ -42,7 +44,7 @@ let data = {
             'id': 3,
             'title': 'Lace glue remover',
             'price': '$2.5/pc', 'category': '分类1',
-            'img': ["https://unpkg.com/outeres/demo/carousel/720x360-3.jpg"],
+            'img': ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"],
             'detail': 'jQuery是一种非常流行和强大的JavaScript库。它提供了很多方便的方法来操作HTML元素和文档对象模型（DOM）。其中一项非常有用的功能是用jquery设置元素的文本。\n' +
                 '在本文中，我们将探讨如何使用jquery来设置元素的文本。我们将介绍两种方法：.text()和.html()。\n' +
                 '\n' +
@@ -56,7 +58,7 @@ let data = {
             'id': 4,
             'title': 'Lace gel',
             'price': '$3.5/pc', 'category': '分类1',
-            'img': ["https://unpkg.com/outeres/demo/carousel/720x360-4.jpg"],
+            'img': ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"],
             'detail': 'jQuery是一种非常流行和强大的JavaScript库。它提供了很多方便的方法来操作HTML元素和文档对象模型（DOM）。其中一项非常有用的功能是用jquery设置元素的文本。\n' +
                 '\n' +
                 '在本文中，我们将探讨如何使用jquery来设置元素的文本。我们将介绍两种方法：.text()和.html()。\n' +
@@ -71,7 +73,7 @@ let data = {
             'id': 5,
             'title': 'Lace glue pen',
             'price': '$2.5/pc', 'category': '分类1',
-            'img': ["https://unpkg.com/outeres/demo/carousel/720x360-5.jpg"],
+            'img': ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"],
             'detail': 'jQuery是一种非常流行和强大的JavaScript库。它提供了很多方便的方法来操作HTML元素和文档对象模型（DOM）。其中一项非常有用的功能是用jquery设置元素的文本。\n' +
                 '\n' +
                 '在本文中，我们将探讨如何使用jquery来设置元素的文本。我们将介绍两种方法：.text()和.html()。\n' +
@@ -86,7 +88,7 @@ let data = {
             'id': 6,
             'title': 'Lace tint mousse ',
             'price': '$3.5/pc', 'category': '分类1',
-            'img': ["https://unpkg.com/outeres/demo/carousel/720x360-5.jpg", "./image/jessica.png"],
+            'img': ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg", "./image/jessica.png"],
             'detail': '这是新一个商品'
         }
         // 新建商品,id 就增加+1,tittle就是商品名称，price就是价格，img就是商品的图片，可以把图片放到image文件中，图片名称不要有中文，可写多个图片
@@ -95,7 +97,7 @@ let data = {
             'id': 7,
             'title': 'Lace tint mousse demo',
             'price': '$3.5/pc', 'category': '分类1',
-            'img': ["./image/jessica.png", "./image/jessica.png", "./image/jessica.png"],
+            'img': ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg", "./image/jessica.png", "./image/jessica.png"],
             'detail': '这是新一个商品'
         }
         ,
@@ -103,11 +105,16 @@ let data = {
             'id': 8,
             'title': 'Lace tint mousse demo1',
             'price': '$3.5/pc', 'category': '分类2',
-            'img': ["./image/jessica.png", "./image/jessica.png", "./image/jessica.png"],
+            'img': ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg", "./image/jessica.png", "./image/jessica.png"],
             'detail': '这是新一个商品'
         }
 
     ],
+    feedbackList:[
+        {productId:1,img:["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"],content:"好评",score:5}
+    ],
+    // 关于，图片地址
+    about:"https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg",
     contact: {
         Whatsapp: '+86 13178844805',
         Email: 'Doralcosmetics@163.com',

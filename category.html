@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Product category</title>
-    <link href="//cdn.staticfile.org/layui/2.8.10/css/layui.css" rel="stylesheet">
+    <link href="./js/layui/css/layui.css" rel="stylesheet">
     <style>
         .carousel-full-width-image {
             width: 100%;
@@ -20,14 +20,63 @@
         .shop {
             height: 210px;
         }
+        .layui-nav .layui-nav-item a {
+            color: black;
+        }
+        .layui-nav .layui-nav-item a:hover {
+            color: black;
+        }
+
+        .layui-layout-admin .layui-logo {
+            box-shadow: 0 0 0 0;
+        }
 
     </style>
 </head>
 <body>
 
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-header">
-        <div class="layui-logo" style="width: 200px">product infornations</div>
+    <div class="layui-header" style="background-color: aliceblue;">
+        <div class="layui-logo" style="width: 350px;color: black !important;">
+            <img src="./image/logo.png" style="width: 30px;height: 30px;" />
+            Guangzhou Doral Cosmetics Co., Ltd.
+        </div>
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left" style="left: 350px;color: black;">
+            <!-- 移动端显示 -->
+            <li class="layui-nav-item layui-hide" lay-header-event="menuLeft">
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="index.html">Home</a></li>
+            <li class="layui-nav-item layui-hide-xs layui-this"><a href="category.html">Products</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="index.html#aboutUs">About us</a></li>
+            <li class="layui-nav-item layui-hide">
+                <a href="javascript:;">nav groups</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">menu 11</a></dd>
+                    <dd><a href="javascript:;">menu 22</a></dd>
+                    <dd><a href="javascript:;">menu 33</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right layui-hide">
+            <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+                <a href="javascript:;">
+                    <img src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png" class="layui-nav-img">
+                    tester
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">Your Profile</a></dd>
+                    <dd><a href="javascript:;">Settings</a></dd>
+                    <dd><a href="javascript:;">Sign out</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                <a href="javascript:;">
+                    <i class="layui-icon layui-icon-more-vertical"></i>
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="layui-side layui-bg-gray" style="margin-bottom: 60px;width: 100px">
 
@@ -39,7 +88,7 @@
         </div>
     </div>
     <div class="layui-body" style="left: 102px">
-        <div class="layui-container" style="padding-bottom: 80px;padding-top: 16px">
+        <div style="padding-bottom: 80px;padding-top: 16px;padding-left: 16px; padding-right: 16px;">
             <!-- 内容主体区域 -->
             <div class="layui-row layui-col-space14" id="ID-flow-lazyimg">
 
@@ -58,7 +107,7 @@
 
 
 </script>
-<script src="//cdn.staticfile.org/layui/2.8.10/layui.js"></script>
+<script src="./js/layui/layui.js"></script>
 <script src="./js/data.js"></script>
 <script>
     // Usage
@@ -74,7 +123,7 @@
         // 图片懒加载
 
         let $flowLazyimg = $("#ID-flow-lazyimg");
-        let $layuiNav = $(".layui-nav");
+        let $layuiNav = $(".layui-nav-tree");
 
 
         $("#ID-keyword").val("");
@@ -94,7 +143,7 @@
                 return  value.category.includes(keyword)
             }).forEach(function (value, index) {
 
-                $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md4 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
+                $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md2 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
                     "                    <img lay-src=\"https://unpkg.com/outeres@0.0.11/demo/wallpaper.jpg\" class=\"full-width-image\">\n" +
                     "                    <h4>" + value.title + "</h4>\n" +
                     "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
@@ -112,7 +161,7 @@
 
         data.productList.forEach(function (value, index) {
 
-            $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md4 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
+            $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md2 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
                 "                    <img lay-src=\"" + value.img[0] + "\" class=\"full-width-image\">\n" +
                 "                    <h4>" + value.title + "</h4>\n" +
                 "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
