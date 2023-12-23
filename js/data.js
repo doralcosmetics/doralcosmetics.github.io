@@ -6,7 +6,7 @@ let data = {
 
     ],
     category: [
-        "分类1", "分类2", "分类3", "分类4", "分类5"
+        "Hair cares", "Hair tools", "Hair Styling", "Skin cares ", "Men cares", "Makeups", "huh"
     ],
     productList: [
         {
@@ -116,9 +116,7 @@ let data = {
     // 关于，图片地址
     about:"https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg",
     contact: {
-        Whatsapp: '+86 13178844805',
-        Email: 'Doralcosmetics@163.com',
-        Address: 'China'
-    }
+        Address: 'China',
+        }
 
 }
