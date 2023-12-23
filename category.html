@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,9 +21,11 @@
         .shop {
             height: 210px;
         }
+
         .layui-nav .layui-nav-item a {
             color: black;
         }
+
         .layui-nav .layui-nav-item a:hover {
             color: black;
         }
@@ -31,190 +34,250 @@
             box-shadow: 0 0 0 0;
         }
 
+        .layui-fixbar li {
+            background-color: transparent;
+            margin-bottom: 4px !important;
+        }
     </style>
 </head>
+
 <body>
 
-<div class="layui-layout layui-layout-admin">
-    <div class="layui-header" style="background-color: aliceblue;">
-        <div class="layui-logo" style="width: 350px;color: black !important;">
-            <img src="./image/logo.png" style="width: 30px;height: 30px;" />
-            Guangzhou Doral Cosmetics Co., Ltd.
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header" style="background-color: aliceblue;">
+            <div class="layui-logo" style="width: 350px;color: black !important;">
+                <img src="./image/logo.png" style="width: 30px;height: 30px;" />
+                Guangzhou Doral Cosmetics Co., Ltd.
+            </div>
+            <!-- 头部区域（可配合layui 已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left" style="left: 350px;color: black;">
+                <!-- 移动端显示 -->
+                <li class="layui-nav-item layui-hide" lay-header-event="menuLeft">
+                    <i class="layui-icon layui-icon-spread-left"></i>
+                </li>
+                <li class="layui-nav-item layui-hide-xs"><a href="index.html">Home</a></li>
+                <li class="layui-nav-item layui-hide-xs layui-this"><a href="category.html">Products</a></li>
+                <li class="layui-nav-item layui-hide-xs"><a href="index.html#aboutUs?from=category">About us</a></li>
+                <li class="layui-nav-item layui-hide">
+                    <a href="javascript:;">nav groups</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">menu 11</a></dd>
+                        <dd><a href="javascript:;">menu 22</a></dd>
+                        <dd><a href="javascript:;">menu 33</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-layout-right layui-hide">
+                <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+                    <a href="javascript:;">
+                        <img src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png" class="layui-nav-img">
+                        tester
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">Your Profile</a></dd>
+                        <dd><a href="javascript:;">Settings</a></dd>
+                        <dd><a href="javascript:;">Sign out</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                    <a href="javascript:;">
+                        <i class="layui-icon layui-icon-more-vertical"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <!-- 头部区域（可配合layui 已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left" style="left: 350px;color: black;">
-            <!-- 移动端显示 -->
-            <li class="layui-nav-item layui-hide" lay-header-event="menuLeft">
-                <i class="layui-icon layui-icon-spread-left"></i>
-            </li>
-            <li class="layui-nav-item layui-hide-xs"><a href="index.html">Home</a></li>
-            <li class="layui-nav-item layui-hide-xs layui-this"><a href="category.html">Products</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="index.html#aboutUs">About us</a></li>
-            <li class="layui-nav-item layui-hide">
-                <a href="javascript:;">nav groups</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="javascript:;">menu 11</a></dd>
-                    <dd><a href="javascript:;">menu 22</a></dd>
-                    <dd><a href="javascript:;">menu 33</a></dd>
-                </dl>
-            </li>
-        </ul>
-        <ul class="layui-nav layui-layout-right layui-hide">
-            <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
-                <a href="javascript:;">
-                    <img src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png" class="layui-nav-img">
-                    tester
-                </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="javascript:;">Your Profile</a></dd>
-                    <dd><a href="javascript:;">Settings</a></dd>
-                    <dd><a href="javascript:;">Sign out</a></dd>
-                </dl>
-            </li>
-            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                <a href="javascript:;">
-                    <i class="layui-icon layui-icon-more-vertical"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="layui-side layui-bg-gray" style="margin-bottom: 60px;width: 100px">
+        <div class="layui-side layui-bg-gray" style="margin-bottom: 60px;width: 100px">
 
-        <div class="layui-side-scroll">
-            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree layui-bg-gray" lay-filter="categoryNav">
-                <li class="layui-nav-item layui-this"><a href="javascript:;">All</a></li>
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree layui-bg-gray" lay-filter="categoryNav">
+                    <li class="layui-nav-item layui-this"><a href="javascript:;">All</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body" style="left: 102px">
+            <div style="padding-bottom: 80px;padding-top: 16px;padding-left: 16px; padding-right: 16px;">
+                <!-- 内容主体区域 -->
+                <div class="layui-row layui-col-space14" id="ID-flow-lazyimg">
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-footer layui-hide-lg" style="left: 0;width: 100%;height: 60px;padding: 0">
+            <!-- 底部固定区域 -->
+            <ul class="layui-nav layui-bg-gray lay-unselect" style="padding: 0!important;width: 100%">
+                <li class="layui-nav-item" style="width: 50%;text-align: center"><a href="index.html">Home</a></li>
+                <li class="layui-nav-item  layui-this" style="width: 50%;text-align: center"><a
+                        href="category.html">Product</a>
+                </li>
             </ul>
         </div>
     </div>
-    <div class="layui-body" style="left: 102px">
-        <div style="padding-bottom: 80px;padding-top: 16px;padding-left: 16px; padding-right: 16px;">
-            <!-- 内容主体区域 -->
-            <div class="layui-row layui-col-space14" id="ID-flow-lazyimg">
-
-            </div>
-        </div>
-    </div>
-    <div class="layui-footer" style="left: 0;width: 100%;height: 60px;padding: 0;z-index: 1000">
-        <!-- 底部固定区域 -->
-        <ul class="layui-nav layui-bg-gray lay-unselect" style="padding: 0!important;width: 100%">
-            <li class="layui-nav-item" style="width: 50%;text-align: center"><a href="index.html">Home</a></li>
-            <li class="layui-nav-item  layui-this" style="width: 50%;text-align: center"><a href="category.html">Category</a>
-            </li>
-        </ul>
-    </div>
-</div>
 
 
-</script>
-<script src="./js/layui/layui.js"></script>
-<script src="./js/data.js"></script>
-<script>
-    // Usage
-    layui.use(function () {
-        var layer = layui.layer;
-        // Welcome
-        var carousel = layui.carousel;
-        var element = layui.element;
-        var util = layui.util;
-        var $ = layui.$;
-        // 渲染 - 图片轮播
-        var flow = layui.flow;
-        // 图片懒加载
-
-        let $flowLazyimg = $("#ID-flow-lazyimg");
-        let $layuiNav = $(".layui-nav-tree");
+    </script>
+    <script src="./js/layui/layui.js"></script>
+    <script src="./js/data.js"></script>
+    <script>
+        // Usage
+        layui.use(function () {
+            var layer = layui.layer;
+            // Welcome
+            var carousel = layui.carousel;
+            var element = layui.element;
+            var util = layui.util;
+            var $ = layui.$;
 
 
-        $("#ID-keyword").val("");
 
 
-        data.category.forEach(function (value, index) {
-            $layuiNav.append("<li class=\"layui-nav-item\"><a href=\"javascript:;\">" + value + "</a></li>");
-        })
 
-        element.on('nav(categoryNav)', function (elem) {
-            let keyword = elem.text();
-            $flowLazyimg.children().remove()
-            data.productList.filter(function (value) {
-                if (keyword === undefined || keyword === null || keyword === '全部') {
-                    return true;
+            util.fixbar({
+                bars: [{ // 定义可显示的 bar 列表信息 -- v2.8.0 新增
+                    type: 'facebook',
+                    content: '<a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img style="width: 50px;height: 50px;" src="./image/Facebook.png" title="facebook"></img></a>'
+                }, {
+                    type: 'gmail',
+                    content: ' <a href="mailto:Doralcosmetics@163.com" target="_blank"><img style="width: 50px;height: 50px;" src="./image/Gmail.jpg" title="gmail"></img></a>'
+                }, {
+                    type: 'WhatsApp',
+                    content: '  <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img style="width: 50px;height: 50px;" src="./image/WhatsApp.jpg" title="WhatsApp"></img></a>',
+
+                }, {
+                    type: 'Instagram',
+                    content: '<a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img style="width: 50px;height: 50px;" src="./image/Instagram.webp" title="Instagram"></img></a>',
+
+                }],
+                // bar1: true,
+                // bar2: true,
+                // default: false, // 是否显示默认的 bar 列表 --  v2.8.0 新增
+                // bgcolor: '#393D52', // bar 的默认背景色
+                // css: {right: 100, bottom: 100},
+                // target: '#target-test', // 插入 fixbar 节点的目标元素选择器
+                // duration: 300, // top bar 等动画时长（毫秒）
+                on: { // 任意事件 --  v2.8.0 新增
+                    mouseenter: function (type) {
+                        layer.tips(type, this, {
+                            tips: 4,
+                            fixed: true
+                        });
+                    },
+                    mouseleave: function (type) {
+                        layer.closeAll('tips');
+                    }
+                },
+                // 点击事件
+                click: function (type) {
+                    console.log(this, type);
+                    // layer.msg(type);
+                },
+                default: false,
+                css: { bottom: 60 }
+            });
+
+
+
+
+
+            // 渲染 - 图片轮播
+            var flow = layui.flow;
+            // 图片懒加载
+
+            let $flowLazyimg = $("#ID-flow-lazyimg");
+            let $layuiNav = $(".layui-nav-tree");
+
+
+            $("#ID-keyword").val("");
+
+
+            data.category.forEach(function (value, index) {
+                $layuiNav.append("<li class=\"layui-nav-item\"><a href=\"javascript:;\">" + value + "</a></li>");
+            })
+
+            element.on('nav(categoryNav)', function (elem) {
+                let keyword = elem.text();
+                console.log(keyword);
+                $flowLazyimg.children().remove()
+                data.productList.filter(function (value) {
+                    if (keyword === undefined || keyword === null || keyword === 'All') {
+                        return true;
+                    }
+                    return value.category.includes(keyword)
+                }).forEach(function (value, index) {
+
+                    $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md2 shop\" style=\" cursor:pointer;\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
+                        "                    <img lay-src=\"" + value.img[0] + "\" class=\"full-width-image\">\n" +
+                        "                    <h4>" + value.title + "</h4>\n" +
+                        "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
+                        "                </div>");
+                })
+                if ($flowLazyimg.children().length === 0) {
+                    $flowLazyimg.append("<span>empty</span>")
                 }
-                return  value.category.includes(keyword)
-            }).forEach(function (value, index) {
 
-                $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md2 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
-                    "                    <img lay-src=\"https://unpkg.com/outeres@0.0.11/demo/wallpaper.jpg\" class=\"full-width-image\">\n" +
+                // 图片懒加载
+                flow.lazyimg({
+                    elem: '#ID-flow-lazyimg img',
+                });
+            })
+
+            data.productList.forEach(function (value, index) {
+
+                $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md2 shop\" style=\" cursor:pointer;\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
+                    "                    <img lay-src=\"" + value.img[0] + "\" class=\"full-width-image\">\n" +
                     "                    <h4>" + value.title + "</h4>\n" +
                     "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
                     "                </div>");
 
             })
-            if ($flowLazyimg.children().length === 0) {
-                $flowLazyimg.append("<span>empty</span>")
-            }
 
+            element.render('nav', 'categoryNav');
+
+            var flow = layui.flow;
+            // 图片懒加载
             flow.lazyimg({
                 elem: '#ID-flow-lazyimg img',
             });
-        })
 
-        data.productList.forEach(function (value, index) {
-
-            $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md2 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
-                "                    <img lay-src=\"" + value.img[0] + "\" class=\"full-width-image\">\n" +
-                "                    <h4>" + value.title + "</h4>\n" +
-                "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
-                "                </div>");
-
-        })
-
-        element.render('nav', 'categoryNav');
-
-        var flow = layui.flow;
-        // 图片懒加载
-        flow.lazyimg({
-            elem: '#ID-flow-lazyimg img',
-        });
-
-        $("#ID-phone").text(data.contact.Whatsapp)
-        $("#ID-email").text(data.contact.Email)
-        $("#ID-address").text(data.contact.Address)
+            $("#ID-phone").text(data.contact.Whatsapp)
+            $("#ID-email").text(data.contact.Email)
+            $("#ID-address").text(data.contact.Address)
 
 
 
 
-        $("#ID-search").on('click', function () {
-            let keyword = $("#ID-keyword").val();
+            $("#ID-search").on('click', function () {
+                let keyword = $("#ID-keyword").val();
 
-            $flowLazyimg.children().remove()
-            data.productList.filter(function (value) {
-                if (keyword === undefined || keyword === null || keyword === '') {
-                    return true;
-                }
-                return value.title.includes(keyword)
-            }).forEach(function (value, index) {
+                $flowLazyimg.children().remove()
+                data.productList.filter(function (value) {
+                    if (keyword === undefined || keyword === null || keyword === '') {
+                        return true;
+                    }
+                    return value.title.includes(keyword)
+                }).forEach(function (value, index) {
 
-                $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md4 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
-                    "                    <img lay-src=\"https://unpkg.com/outeres@0.0.11/demo/wallpaper.jpg\" class=\"full-width-image\">\n" +
-                    "                    <h4>" + value.title + "</h4>\n" +
-                    "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
-                    "                </div>");
+                    $flowLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm6 layui-col-md4 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
+                        "                    <img lay-src=\"https://unpkg.com/outeres@0.0.11/demo/wallpaper.jpg\" class=\"full-width-image\">\n" +
+                        "                    <h4>" + value.title + "</h4>\n" +
+                        "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
+                        "                </div>");
 
+                })
+                flow.lazyimg({
+                    elem: '#ID-flow-lazyimg img',
+                });
             })
+
+
+
+
             flow.lazyimg({
                 elem: '#ID-flow-lazyimg img',
             });
-        })
-
-
-
-
-        flow.lazyimg({
-            elem: '#ID-flow-lazyimg img',
         });
-    });
-</script>
+    </script>
 
 </body>
+
 </html>

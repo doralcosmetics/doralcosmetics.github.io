@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product category</title>
+    <title>Home</title>
     <link href="./js/layui/css/layui.css" rel="stylesheet">
     <style>
         .carousel-full-width-image {
@@ -25,12 +25,17 @@
         .layui-nav .layui-nav-item a {
             color: black;
         }
+
         .layui-nav .layui-nav-item a:hover {
             color: black;
         }
 
         .layui-layout-admin .layui-logo {
             box-shadow: 0 0 0 0;
+        }
+        .layui-fixbar li{
+            background-color: transparent;
+            margin-bottom: 4px !important;
         }
     </style>
 </head>
@@ -48,9 +53,10 @@
                 <li class="layui-nav-item layui-hide" lay-header-event="menuLeft">
                     <i class="layui-icon layui-icon-spread-left"></i>
                 </li>
-                <li class="layui-nav-item layui-hide-xs layui-this"><a href="index.html">Home</a></li>
+                <li class="layui-nav-item layui-hide-xs" id="ID-nav-home"><a href="index.html">Home</a></li>
                 <li class="layui-nav-item layui-hide-xs"><a href="category.html">Products</a></li>
-                <li class="layui-nav-item layui-hide-xs"><a href="index.html#aboutUs">About us</a></li>
+                <li class="layui-nav-item layui-hide-xs" id="ID-nav-about"><a href="index.html#aboutUs">About us</a>
+                </li>
                 <li class="layui-nav-item layui-hide">
                     <a href="javascript:;">nav groups</a>
                     <dl class="layui-nav-child">
@@ -117,31 +123,15 @@
                 </fieldset>
             </div>
             <!--- 反馈 -->
-            <div class="flow-demo-lazyimg" id="ID-flow-demo-lazyimg" style="margin-left: 8px;margin-right: 8px;margin-bottom: 30px;">
-                <div class="layui-row layui-col-space14" id="ID-flow-feedback-lazyimg1">
-                    <div class="layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop">
-                        <img lay-src="https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"
-                            class="full-width-image">
-                        <div class="feedback-rate" lay-options="{value: 5}"></div>
-                        <p>good product</p>
-                    </div>
-                    <div class="layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop">
-                        <img lay-src="https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"
-                            class="full-width-image">
-                        <div class="feedback-rate" lay-options="{value: 5}"></div>
-                        <p>good product</p>
-                    </div>
-                    <div class="layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop">
-                        <img lay-src="https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"
-                            class="full-width-image">
-                        <div class="feedback-rate" lay-options="{value: 5}"></div>
-                        <p>good product</p>
-                    </div>
+            <div class="flow-demo-lazyimg" id="ID-flow-demo-lazyimg"
+                style="margin-left: 8px;margin-right: 8px;margin-bottom: 30px;">
+                <div class="layui-row layui-col-space14" id="ID-flow-feedback-lazyimg">
+
                 </div>
             </div>
 
             <div id="aboutUs">
-                <fieldset class="layui-elem-field layui-field-title" >
+                <fieldset class="layui-elem-field layui-field-title">
                     <legend>About Us</legend>
                 </fieldset>
             </div>
@@ -159,15 +149,19 @@
                 </fieldset>
             </div>
             <div style="text-align: center;padding: 16px 16px 70px;">
-           
-        
-                <a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img style="width: 70px;height: 70px;" src="./image/Facebook.png" title="facebook"></img></a>
-                <a href="mailto:Doralcosmetics@163.com" target="_blank"><img style="width: 70px;height: 70px;" src="./image/gemail.jpg" title="gemail"></img></a>
-                <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img style="width: 70px;height: 70px;" src="./image/WhatsApp.jpg" title="WhatsApp"></img></a>
-        
-                <a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img style="width: 70px;height: 70px;" src="./image/Instagram.webp" title="Instagram"></img></a>
-           
-            </br>
+
+
+                <a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img
+                        style="width: 70px;height: 70px;" src="./image/Facebook.png" title="facebook"></img></a>
+                <a href="mailto:Doralcosmetics@163.com" target="_blank"><img style="width: 70px;height: 70px;"
+                        src="./image/Gmail.jpg" title="gmail"></img></a>
+                <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img style="width: 70px;height: 70px;"
+                        src="./image/WhatsApp.jpg" title="WhatsApp"></img></a>
+
+                <a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img
+                        style="width: 70px;height: 70px;" src="./image/Instagram.webp" title="Instagram"></img></a>
+
+                </br>
                 <h3>address:<span id="ID-address"></span></h3>
             </div>
             <div class="layui-footer layui-hide-lg" style="left: 0;width: 100%;height: 60px;padding: 0">
@@ -196,27 +190,33 @@
                 var $ = layui.$;
                 var rate = layui.rate;
 
-                $("#ID-about").attr("src",data.about)
+                $("#ID-about").attr("src", data.about)
 
+                if (layui.url(location.href).search.from) {
+                    $("#ID-nav-about").addClass('layui-this');
+
+                } else {
+                    $("#ID-nav-home").addClass('layui-this')
+                }
 
 
                 var util = layui.util;
                 // 自定义固定条
                 util.fixbar({
                     bars: [{ // 定义可显示的 bar 列表信息 -- v2.8.0 新增
-                        type: 'share',
-                        icon: 'layui-icon-share'
+                        type: 'facebook',
+                        content: '<a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img style="width: 50px;height: 50px;" src="./image/Facebook.png" title="facebook"></img></a>'
                     }, {
-                        type: 'help',
-                        icon: 'layui-icon-help'
+                        type: 'gmail',
+                        content: ' <a href="mailto:Doralcosmetics@163.com" target="_blank"><img style="width: 50px;height: 50px;" src="./image/Gmail.jpg" title="gmail"></img></a>'
                     }, {
-                        type: 'cart',
-                        icon: 'layui-icon-cart',
-                        style: 'background-color: #FF5722;'
+                        type: 'WhatsApp',
+                        content: '  <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img style="width: 50px;height: 50px;" src="./image/WhatsApp.jpg" title="WhatsApp"></img></a>',
+            
                     }, {
-                        type: 'groups',
-                        content: '群',
-                        style: 'font-size: 21px;'
+                        type: 'Instagram',
+                        content: '<a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img style="width: 50px;height: 50px;" src="./image/Instagram.webp" title="Instagram"></img></a>',
+                 
                     }],
                     // bar1: true,
                     // bar2: true,
@@ -241,13 +241,14 @@
                         console.log(this, type);
                         // layer.msg(type);
                     },
-                    css: { bottom: 60}
+                    default:false,
+                    css: { bottom: 60 }
                 });
 
                 // 批量渲染
                 rate.render({
                     elem: '.feedback-rate',
-                    readonly:true
+                    readonly: true
                 });
 
                 // 渲染 - 图片轮播
@@ -262,16 +263,23 @@
 
 
                 data.head.forEach(function (value, index) {
-                    $carousel.append(" <div>" +
-                        "<img src='" + value + "' class=\"carousel-full-width-image\">\n" +
+                  
+                        if(value.productId){
+                            $carousel.append(" <div>" +
+                        "<img src='" + value.img + "' class=\"carousel-full-width-image\" style=\" cursor:pointer;\" onclick=\"window.location.href='show.html?id=" + value.productId + "'\">\n" +
                         "                </div>");
+                        }else{
+                            $carousel.append(" <div>" +
+                        "<img src='" + value.img + "' class=\"carousel-full-width-image\" >\n" +
+                        "                </div>");
+                        }
 
                 })
 
 
                 data.productList.slice(0, 6).forEach(function (value, index) {
 
-                    $flowPruductLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
+                    $flowPruductLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop\" style=\" cursor:pointer;\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
                         "                    <img lay-src=\"" + value.img[0] + "\" class=\"full-width-image\">\n" +
                         "                    <h4>" + value.title + "</h4>\n" +
                         "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
@@ -280,11 +288,17 @@
                 })
 
                 data.feedbackList.slice(0, 6).forEach(function (value, index) {
-                    $flowFeedbackLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
-                        "                    <img lay-src=\"" + value.img[0] + "\" class=\"full-width-image\">\n" +
-                        "                    <h4>" + value.title + "</h4>\n" +
-                        "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +
-                        "                </div>");
+                    $flowFeedbackLazyimg.append("<div class=\"layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop\" style=\" cursor:pointer;\" onclick=\"window.location.href='show.html?id=" + value.productId + "'\">" +
+                        " <img src=\""+value.img[0]+"\"" +
+                        "  class=\"full-width-image\">" +
+                        "  <div class=\"feedback-rate\" lay-options=\"{value: "+value.score+"}\"></div>" +
+                        " <p>"+value.content+"</p>" +
+                        "</div>");
+                           // 批量渲染
+                rate.render({
+                    elem: '.feedback-rate',
+                    readonly: true
+                });
                 })
 
                 $("#ID-phone").text(data.contact.Whatsapp)
@@ -329,7 +343,7 @@
                         return value.title.includes(keyword)
                     }).forEach(function (value, index) {
 
-                        $flowPruductLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
+                        $flowPruductLazyimg.append(" <div class=\"layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 shop\" style=\" cursor:pointer;\" onclick=\"window.location.href='show.html?id=" + value.id + "'\">\n" +
                             "                    <img lay-src=\"" + value.img[0] + "\" class=\"full-width-image\">\n" +
                             "                    <h4>" + value.title + "</h4>\n" +
                             "                    <h3>Price：<span style=\"color: red\">" + value.price + "</span></h3>\n" +

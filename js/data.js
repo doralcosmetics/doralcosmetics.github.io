@@ -1,13 +1,16 @@
 let data = {
-    head: [
-        "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg",
-        "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg",
-        "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"
+    // 首页头部轮播图
+    head: [{ img: "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg" },
+    { productId: 1, img: "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg" },
+    { productId: 2, img: "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg" },
+    { productId: 3, img: "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg" }
 
     ],
+    // 分类
     category: [
         "Hair cares", "Hair tools", "Hair Styling", "Skin cares ", "Men cares", "Makeups", "huh"
     ],
+    // 产品列表
     productList: [
         {
             'id': 1,
@@ -110,13 +113,15 @@ let data = {
         }
 
     ],
-    feedbackList:[
-        {productId:1,img:["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"],content:"好评",score:5}
+    // 反馈
+    feedbackList: [
+        { productId: 1, img: ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"], content: "好评", score: 5 },
+        { productId: 2, img: ["https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg"], content: "好好评好评好评好评好评好评好评好评好评评", score: 4 }
     ],
     // 关于，图片地址
-    about:"https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg",
+    about: "https://img3.wallspic.com/crops/0/7/1/6/7/176170/176170-jia_qi_chu_zu-fei_cui_hu-du_jia-de_fang_zi-shui_zi_yuan-3840x2160.jpg",
     contact: {
         Address: 'China',
-        }
+    }
 
 }
