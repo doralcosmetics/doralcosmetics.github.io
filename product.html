@@ -80,7 +80,8 @@
 
 <script id="ID-productCategoryItem" type="text/html">
     {{#  layui.each(d, function(index, item){ }}
-    <a href="#{{item}}">{{item}}</a>
+<!--    <a href="#{{item}}">{{item}}</a>-->
+    <a lay-on="toProduct">{{item}}</a>
     {{#  }); }}
 </script>
 
@@ -136,8 +137,6 @@
 
         renderProduct()
 
-
-
         function renderCategory() {
             const productCategoryItemTpl = $('#ID-productCategoryItem').html();
             const elemView = $('#ID-productCategory');
@@ -170,9 +169,9 @@
 
 
             if (isMobileDevice()) {
-                carouselContainer.height(300)
+                carouselContainer.height(320)
             } else {
-                carouselContainer.height(460)
+                carouselContainer.height(465)
             }
 
             // 渲染并输出结果
@@ -221,6 +220,9 @@
                 });
 
                 openImage(index,imgList)
+            },
+            'toProduct': function () {
+                document.getElementById($(this).html()).scrollIntoView({behavior: 'smooth'})
             },
         })
 
