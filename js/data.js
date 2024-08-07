@@ -1,4 +1,4 @@
-let data = {
+const data = {
     // 首页头部轮播图
     head: {
         pc: [{img: "images/pc/header1.jpg"}, {img: "images/pc/header1.jpg"}],
@@ -13,12 +13,12 @@ let data = {
     // 产品列表
     productList: [
         {
-            'id': 1,
-            'title': 'braid gel',
-            'price': '$3/pc',
-            'category': 'Braid Gel',
-            'img': ["images/braidGel/braid gel1.jpg", "images/braidGel/braid gel2.jpg"],
-            'detail': 'Ingredients:\n' +
+            id: 1,
+            title: 'braid gel',
+            price: '$3/pc',
+            category: 'Braid Gel',
+            img: ["images/braidGel/braid gel1.jpg", "images/braidGel/braid gel2.jpg"],
+            detail: 'Ingredients:\n' +
                 'Aqua,(Water), Alcohol Ethoxylate, Ceteareth-25, ' +
                 'Dimethicone, Calodendrum Capense Nut Oil, Squalane,' +
                 ' Tocopherol, Maackia Fauriei Stem Extract, ' +
@@ -38,12 +38,12 @@ let data = {
                 'Batch No.: 0114\n' +
                 'Made in China'
         }, {
-            'id': 2,
-            'title': 'braid mousse',
-            'price': '$3/pc',
-            'category': 'Braid Mousse',
-            'img': ["images/braidMousse/braid mousse1.jpg", "images/braidMousse/braid mousse2.jpg", "images/braidMousse/braid mousse3.jpg"],
-            'detail': 'Ingredients:\n' +
+            id: 2,
+            title: 'braid mousse',
+            price: '$3/pc',
+            category: 'Braid Mousse',
+            img: ["images/braidMousse/braid mousse1.jpg", "images/braidMousse/braid mousse2.jpg", "images/braidMousse/braid mousse3.jpg"],
+            detail: 'Ingredients:\n' +
                 'Aqua (Water),Acrylates/VP\n' +
                 'Copolymer,Cocamidopropy Betaine,\n' +
                 'Methyl Benzoate, Propylene Glycol, Peg-40\n' +
@@ -67,12 +67,12 @@ let data = {
                 'Made in China'
         },
         {
-            'id': 3,
-            'title': 'braid sheen spray',
-            'price': '$3/pc',
-            'category': 'Braid Sheen Spray',
-            'img': ["images/braidSheenSpray/braid sheen spray1.jpg", "images/braidSheenSpray/braid sheen spray2.jpg"],
-            'detail': '\n' +
+            id: 3,
+            title: 'braid sheen spray',
+            price: '$3/pc',
+            category: 'Braid Sheen Spray',
+            img: ["images/braidSheenSpray/braid sheen spray1.jpg", "images/braidSheenSpray/braid sheen spray2.jpg"],
+            detail: '\n' +
                 'Ingredients: \n' +
                 'Aqua (Water), Glycerin, Propylene Glycol, \n' +
                 'Lavandula Angustifolia(Lavender)\n' +
@@ -96,12 +96,12 @@ let data = {
                 'Made in China\n'
         },
         {
-            'id': 4,
-            'title': 'curl cream',
-            'price': '$3/pc',
-            'category': 'Curl Cream',
-            'img': ["images/curlCream/curl cream1.jpg", "images/curlCream/curl cream2.jpg"],
-            'detail': 'Ingredients:\n' +
+            id: 4,
+            title: 'curl cream',
+            price: '$3/pc',
+            category: 'Curl Cream',
+            img: ["images/curlCream/curl cream1.jpg", "images/curlCream/curl cream2.jpg"],
+            detail: 'Ingredients:\n' +
                 'Aqua( Water), PVP, Glycerin, Cetearech, Propylene Glycol USP Grade, Mineral Oil, Parfum, Methylparaben, Phenoxyethanol.\n' +
                 '\n' +
                 'Usages:\n' +
@@ -113,12 +113,12 @@ let data = {
                 'Made in China'
         },
         {
-            'id': 5,
-            'title': 'curl mousse',
-            'price': '$3/pc',
-            'category': 'Curl Mousse',
-            'img': ["images/curlMousse/curl mousse1.jpg", "images/curlMousse/curl mousse2.jpg", "images/curlMousse/curl mousse3.jpg"],
-            'detail': 'Ingredients:\n' +
+            id: 5,
+            title: 'curl mousse',
+            price: '$3/pc',
+            category: 'Curl Mousse',
+            img: ["images/curlMousse/curl mousse1.jpg", "images/curlMousse/curl mousse2.jpg", "images/curlMousse/curl mousse3.jpg"],
+            detail: 'Ingredients:\n' +
                 'Aqua( Water), Olive Fruit Oil, Hydrogenated Castor oil, Acrylates, Copolymer, Cocamidopropyl Betaine, Peg-20 Diethicone, Disodium edta, Methylchloroisothiazolione, Fragrance.\n' +
                 '\n' +
                 'Directions:\n' +
@@ -134,12 +134,12 @@ let data = {
                 'Made in China'
         },
         {
-            'id': 6,
-            'title': 'extra lace wig glue',
-            'price': '$3/pc',
-            'category': 'Extra Lace Wig Glue',
-            'img': ["images/extraLaceWigGlue/extra lace wig glue1.jpg", "images/extraLaceWigGlue/extra lace wig glue2.jpg"],
-            'detail': 'Ingredients:\n' +
+            id: 6,
+            title: 'extra lace wig glue',
+            price: '$3/pc',
+            category: 'Extra Lace Wig Glue',
+            img: ["images/extraLaceWigGlue/extra lace wig glue1.jpg", "images/extraLaceWigGlue/extra lace wig glue2.jpg"],
+            detail: 'Ingredients:\n' +
                 'Polyacrylate Rubber Copolymer, Filler(Sodium Bicarbonate), Solvent ethanol, Surfactants(Sodium dodecyldiphenyl ether disulfonate.\n' +
                 '\n' +
                 'Directions:\n' +
@@ -158,36 +158,36 @@ let data = {
                 'Made in China'
         },
         {
-            'id': 7,
-            'title': 'ginger conditioner',
-            'price': '$3/pc',
-            'category': 'Ginger Conditioner',
-            'img': ["images/gingerConditioner/ginger conditioner1.jpg"],
-            'detail': 'ingredients :\n' +
+            id: 7,
+            title: 'ginger conditioner',
+            price: '$3/pc',
+            category: 'Ginger Conditioner',
+            img: ["images/gingerConditioner/ginger conditioner1.jpg"],
+            detail: 'ingredients :\n' +
                 'Water, Cetearyl Alcohol, Steartrimonium Choride Alcohol, Butylene Glycol, Methylparaben,  Dimethicone, Curcuma Longa(turmeric), Root Extract, Guar Hydroxypropyltrimonium Chloride,Cyclopentasiloxane, Fragrance, Zingiber Officinale(ginger) Root Extract, Citric Acid, Phenoxyethsnol, Ci 19140, Maenium Nitrate, Ci 15985, Methylchloroisothiazolinone, Magnesium Chloride, Methylisothiazolinone.\n' +
                 '\n' +
                 'Batch No.: 0127\n' +
                 'Made in China'
         },
         {
-            'id': 8,
-            'title': 'ginger shampoo',
-            'price': '$3/pc',
-            'category': 'Ginger Shampoo',
-            'img': ["images/gingerShampoo/ginger shampoo1.jpg"],
-            'detail': 'Ingredients:\n' +
+            id: 8,
+            title: 'ginger shampoo',
+            price: '$3/pc',
+            category: 'Ginger Shampoo',
+            img: ["images/gingerShampoo/ginger shampoo1.jpg"],
+            detail: 'Ingredients:\n' +
                 'Water, Platycladus Orientalis Extract, Dioscorea Opposita Extract, Zingiber Officinale(ginger) Extract, Ligustrum Lucidum Extract, Taxillus Chinensis Extract, Cinnamomum Cassia Extract, Alcohol, Sodium Laureth Sulfate, Disodium Laureth Sulfosuccinate, Lauramidopropyl Betaine, Dimethicone, Glycol Stearate, Cocamide Dea, Stearyl Alcohol,  Phenoxyethanol, Propylparaben, Butylparaben, Methylparaben, Ethylparaben, Polyquaternium-10, Sodium Citrate, Fragrance, Sodium Oxide, Citric Acid.\n' +
                 '\n' +
                 'Batch No.: 0126\n' +
                 'Made in China'
         },
         {
-            'id': 9,
-            'title': 'lace melting spray',
-            'price': '$3/pc',
-            'category': 'Lace Melting Spray',
-            'img': ["images/laceMeltingSpray/lace melting spray1.jpg", "images/laceMeltingSpray/lace melting spray2.jpg"],
-            'detail': 'Lace melting spray is quick and easy wiginstall spray that is glueless and gentle on your hairline for everyday lace wig warers. It can be removed with water and does not leave a heavy residue.\n' +
+            id: 9,
+            title: 'lace melting spray',
+            price: '$3/pc',
+            category: 'Lace Melting Spray',
+            img: ["images/laceMeltingSpray/lace melting spray1.jpg", "images/laceMeltingSpray/lace melting spray2.jpg"],
+            detail: 'Lace melting spray is quick and easy wiginstall spray that is glueless and gentle on your hairline for everyday lace wig warers. It can be removed with water and does not leave a heavy residue.\n' +
                 '\n' +
                 'Ingredients:\n' +
                 'Acrylates Copolymer, Rosa Rugosa Leaf Extract, Aloe Yohjyu Matsu, Panthenol, Cithmum Maritimum Extract, Rosmarinus Officinalis (Rosemary) Leaf Extract, Melaleuca Alternifolia( Tea Tree) Leaf Extract, Salvia Officinalis (Sage) Oil, Alcohol Denat, Aroma, Potassium Sorbate.\n\n' +
@@ -203,12 +203,12 @@ let data = {
                 'Made in China'
         },
         {
-            'id': 10,
-            'title': 'skin protection',
-            'price': '$3/pc',
-            'category': 'Skin Protection',
-            'img': ["images/skinProtection/skin protection1.jpg", "images/skinProtection/skin protection2.jpg", "images/skinProtection/skin protection3.jpg"],
-            'detail': 'Ingredients: Aqua(Water), Ethanol, Methyl Methacrylate, BOP, Cellulose.\n' +
+            id: 10,
+            title: 'skin protection',
+            price: '$3/pc',
+            category: 'Skin Protection',
+            img: ["images/skinProtection/skin protection1.jpg", "images/skinProtection/skin protection2.jpg", "images/skinProtection/skin protection3.jpg"],
+            detail: 'Ingredients: Aqua(Water), Ethanol, Methyl Methacrylate, BOP, Cellulose.\n' +
                 '\n' +
                 'Directions:\n' +
                 '1). Shake bottle well before use.\n' +
@@ -226,12 +226,12 @@ let data = {
                 'Made in China'
         },
         {
-            'id': 11,
-            'title': 'wax stick',
-            'price': '$3/pc',
-            'category': 'Wax Stick',
-            'img': ["images/waxStick/wax stick1.jpg", "images/waxStick/wax stick2.jpg"],
-            'detail': 'Ingredients: \n' +
+            id: 11,
+            title: 'wax stick',
+            price: '$3/pc',
+            category: 'Wax Stick',
+            img: ["images/waxStick/wax stick1.jpg", "images/waxStick/wax stick2.jpg"],
+            detail: 'Ingredients: \n' +
                 'Aqua,Petrolatum,Glycerin,Glyceryl,StearateSE,Beeswax,Kaolin,Microcrystalline,wax,Cyclopentasiloxane,Parfum,Methylparaben.\n' +
                 '\n' +
                 'Cautions：\n' +
