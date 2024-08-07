@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guangzhou Doral Cosmetics Co., Ltd.</title>
+    <link href="//unpkg.com/layui@2.9.13/dist/css/layui.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <!-- 轮播图-->
+    <div id="ID-carousel-container">
+        <div class="layui-carousel" id="ID-carousel-image">
+            <div carousel-item id="ID-carousel-image-list">
+            </div>
+        </div>
+    </div>
+    <!--- 产品列表 -->
+    <div>
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>Product List</legend>
+        </fieldset>
+    </div>
+    <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-product">
+    </div>
+    <div style="height: 60px;width: 100%;display: flex;justify-content: center;">
+        <button type="reset" class="layui-btn layui-btn-primary"
+                onclick="changeFrameSrc('product.html')">MORE+
+        </button>
+    </div>
+
+    <!--- 反馈 -->
+    <div>
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>Feedback</legend>
+        </fieldset>
+    </div>
+    <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-feedback">
+    </div>
+
+
+    <!--联系方式-->
+    <div>
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>Contact</legend>
+        </fieldset>
+    </div>
+
+    <div style="text-align: center;padding: 16px 16px 70px;">
+
+
+        <a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img
+                src="images/logo/facebook.png" style="width: 30px;height: 30px" title="facebook"></img></a>
+        <a href="mailto:Doralcosmetics@163.com" target="_blank"><img
+                src="images/logo/gmail.png" title="gmail"></img></a>
+        <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img
+                src="images/logo/whatsapp.png" title="WhatsApp"></img></a>
+
+        <a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img
+                src="images/logo/instagram-fill.png" title="Instagram"></img></a>
+
+        <br/>
+        <br/>
+        <h3>address:<span id="ID-address"></span></h3>
+    </div>
+</div>
+
+
+<script id="ID-carouselItem" type="text/html">
+    {{#  layui.each(d, function(index, item){ }}
+    <div><img alt="" src="{{item.img}}"/></div>
+    {{#  }); }}
+
+</script>
+
+
+<script id="ID-productItem" type="text/html">
+    {{#  layui.each(d, function(index, item){ }}
+    <div class="layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 my-shop"
+         onclick="changeFrameSrc('product.html?id={{item.id}}')">
+        <img alt="" src="{{item.img[0]}}"/>
+        <h3>{{item.title}}</h3>
+        <h4>Price：<span class="my-price">{{item.price}}</span></h4>
+    </div>
+    {{#  }); }}
+</script>
+
+<script id="ID-feedbackItem" type="text/html">
+    {{#  layui.each(d, function(index, item){ }}
+    <div class="layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 my-shop"
+         onclick="changeFrameSrc('product.html?id={{item.productId}}')">
+        <img alt="" src="{{item.img[0]}}"/>
+        <div class="feedback-rate" lay-options="{value:  {{item.score}}  }"></div>
+        <h3>{{item.content}}</span></h3>
+    </div>
+    {{#  }); }}
+</script>
+
+
+<script src="//unpkg.com/layui@2.9.13/dist/layui.js"></script>
+<script src="js/index.js"></script>
+<script src="js/data.js"></script>
+<script>
+    layui.use(function () {
+        const carousel = layui.carousel;
+        const laytpl = layui.laytpl;
+        const rate = layui.rate;
+
+        const device = layui.device();
+
+
+        renderCarousel()
+        renderProduct()
+        renderFeedback()
+
+        renderContact()
+
+
+        function renderContact() {
+            $("#ID-address").text(data.contact.Address)
+        }
+
+        function renderFeedback() {
+            const feedbackItemTpl = $('#ID-feedbackItem').html(); // 获取模板字符
+            const elemView = $('#ID-flow-feedback'); // 视图对象
+            const feedbackList = data.feedbackList.slice(0, 6);
+
+
+            // 渲染并输出结果
+            laytpl(feedbackItemTpl).render(feedbackList, function (str) {
+                elemView.html(str);
+            });
+            // 批量渲染
+            rate.render({
+                elem: '.feedback-rate',
+                readonly: true
+            });
+        }
+
+
+        function renderProduct() {
+            const productItemTpl = $('#ID-productItem').html(); // 获取模板字符
+            const elemView = $('#ID-flow-product'); // 视图对象
+            const productList = data.productList.slice(0, 6);
+
+
+            // 渲染并输出结果
+            laytpl(productItemTpl).render(productList, function (str) {
+                elemView.html(str);
+            });
+
+
+        }
+
+        function renderCarousel() {
+
+            const carouselContainer = $('#ID-carousel-container');
+
+            const carouselItemTpl = $('#ID-carouselItem').html(); // 获取模板字符
+            const elemView = $('#ID-carousel-image-list'); // 视图对象
+            let imageList;
+            if (isMobileDevice()) {
+                carouselContainer.height(300)
+                imageList = data.head.phone
+            } else {
+                carouselContainer.height(500)
+                imageList = data.head.pc
+            }
+
+            // 渲染并输出结果
+            laytpl(carouselItemTpl).render(imageList, function (str) {
+                elemView.html(str);
+            });
+            carousel.render({
+                elem: '#ID-carousel-image',
+                width: '100%',
+                height: '100%',
+                interval: 5000,
+                trigger: (device.ios || device.android) ? 'click' : 'hover'
+            });
+        }
+
+
+
+
+
+    })
+
+
+</script>
+</body>
+</html>

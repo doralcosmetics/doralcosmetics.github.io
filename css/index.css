@@ -1,0 +1,144 @@
+
+.my-header {
+    position: fixed !important;
+    display: flex;
+    background-color: aliceblue !important;
+    width: 100%;
+    z-index: 999;
+}
+
+.my-nav {
+    background-color: aliceblue !important;
+    color: black !important;
+}
+
+.my-nav-logo {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.my-nav-logo img, .my-about-container img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+
+.my-nav-logo span {
+    font-size: 20px;
+}
+
+.layui-nav-item a, span {
+    font-weight: bold;
+}
+
+.my-content {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+.layui-carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+.my-margin8 {
+    margin: 8px;
+}
+
+
+.my-shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 16px;
+    border-radius: 5px !important;
+    cursor: pointer;
+}
+
+.my-shop img {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 8px;
+
+}
+
+.layui-fixbar img {
+    width: 32px;
+    height: 32px;
+}
+
+.layui-fixbar li {
+    font-size: initial;
+    border-radius: 10px;
+}
+
+.layui-nav-item {
+    cursor: pointer;
+}
+
+.my-about-container {
+    padding: 16px;
+}
+
+.my-about-content{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+}
+.my-about-content .layui-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-about-logo {
+    display: flex;
+    align-items: center;
+}
+
+.my-product-category {
+    display: flex;
+    padding: 0 32px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.my-product-category a {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.my-product-category a:hover {
+    color: #16b777;
+}
+
+.my-product-no-data {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.my-product-detail {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.my-price{
+    color: #e4393c;
+}
+
+.my-margin-top16{
+    margin-top: 16px;
+}

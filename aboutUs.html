@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guangzhou Doral Cosmetics Co., Ltd.</title>
+    <link href="//unpkg.com/layui@2.9.13/dist/css/layui.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body style="margin: initial">
+<div class="my-about-container">
+    <div class="layui-row layui-col-space14">
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md6 layui-col-lg6">
+            <img id="ID-aboutImg" style="width: 100%;height: 100%;" alt="" src=""/>
+        </div>
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md6 layui-col-lg6">
+            <div class="my-about-content">
+                <div class="my-about-logo">
+                    <img src="images/logo.png" alt="logo">
+                    <h2>Guangzhou Doral Cosmetics Co., Ltd.</h2>
+                </div>
+                <div class="layui-text layui-margin-3">
+                    <p>
+                        公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介</p>
+                    <p>公司地址</p>
+                    <p>公司地址</p>
+                    <p>公司地址</p>
+                    <p>公司地址</p>
+                    <p>公司地址：广州的一个地方</p>
+                    <p>联系方式：</p>
+                    <div style="text-align: center;padding: 16px 16px 70px;">
+
+
+                        <a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img
+                                src="images/logo/facebook.png" style="width: 36px;height: 36px" title="facebook"></img></a>
+                        <a href="mailto:Doralcosmetics@163.com" target="_blank"><img
+                                src="images/logo/gmail.png" title="gmail"></img></a>
+                        <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img
+                                src="images/logo/whatsapp.png" title="WhatsApp"></img></a>
+
+                        <a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img
+                                src="images/logo/instagram-fill.png" title="Instagram"></img></a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="//unpkg.com/layui@2.9.13/dist/layui.js"></script>
+<script src="js/index.js"></script>
+<script src="js/data.js"></script>
+<script>
+    layui.use(function () {
+
+        const aboutImg = $("#ID-aboutImg");
+
+
+        renderAbout()
+
+        function renderAbout() {
+            aboutImg.attr("src", data.about.img)
+
+        }
+
+
+    });
+</script>
+</body>
+</html>
