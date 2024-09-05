@@ -64,7 +64,6 @@
     width: 100%;
     aspect-ratio: 4 / 3;
     padding-bottom: 8px;
-
 }
 
 .layui-fixbar img {
@@ -144,4 +143,14 @@
 }
 a{
     cursor: pointer;
+}
+
+.my-header-carousel {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+}
+
+.my-commodity-image-carousel {
+    width: 100%;
+    aspect-ratio: 4 / 3;
 }

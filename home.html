@@ -10,7 +10,7 @@
 <body>
 <div>
     <!-- 轮播图-->
-    <div id="ID-carousel-container">
+    <div id="ID-carousel-container" class="my-header-carousel">
         <div class="layui-carousel" id="ID-carousel-image">
             <div carousel-item id="ID-carousel-image-list">
             </div>
@@ -32,13 +32,16 @@
     </div>
 
     <!--- 反馈 -->
-    <div>
-        <fieldset class="layui-elem-field layui-field-title">
-            <legend>Feedback</legend>
-        </fieldset>
+    <div  class="layui-hide">
+        <div>
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>Feedback</legend>
+            </fieldset>
+        </div>
+        <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-feedback">
+        </div>
     </div>
-    <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-feedback">
-    </div>
+
 
 
     <!--联系方式-->
@@ -82,7 +85,7 @@
          onclick="changeFrameSrc('product.html?id={{item.id}}')">
         <img alt="" src="{{item.img[0]}}"/>
         <h3>{{item.title}}</h3>
-        <h4>Price：<span class="my-price">{{item.price}}</span></h4>
+<!--        <h4>Price：<span class="my-price">{{item.price}}</span></h4>-->
     </div>
     {{#  }); }}
 </script>
@@ -143,7 +146,7 @@
         function renderProduct() {
             const productItemTpl = $('#ID-productItem').html(); // 获取模板字符
             const elemView = $('#ID-flow-product'); // 视图对象
-            const productList = data.productList.slice(0, 6);
+            const productList = data.productList.slice(0, 12);
 
 
             // 渲染并输出结果
@@ -156,16 +159,13 @@
 
         function renderCarousel() {
 
-            const carouselContainer = $('#ID-carousel-container');
 
             const carouselItemTpl = $('#ID-carouselItem').html(); // 获取模板字符
             const elemView = $('#ID-carousel-image-list'); // 视图对象
             let imageList;
             if (isMobileDevice()) {
-                carouselContainer.height(300)
                 imageList = data.head.phone
             } else {
-                carouselContainer.height(500)
                 imageList = data.head.pc
             }
 
@@ -181,11 +181,6 @@
                 trigger: (device.ios || device.android) ? 'click' : 'hover'
             });
         }
-
-
-
-
-
     })
 
 

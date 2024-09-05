@@ -1,14 +1,15 @@
 const data = {
     // 首页头部轮播图
     head: {
-        pc: [{img: "images/pc/header1.jpg"}, {img: "images/pc/header1.jpg"}],
-        phone: [{img: "images/phone/header1.jpg"}, {img: "images/phone/header1.jpg"}]
+        pc: [{img: "images/pc/header3.jpg"}],
+        phone: [{img: "images/phone/header3.jpg"}]
     },
     // 分类
     category: [
         "Braid Gel", "Braid Mousse", "Braid Sheen Spray",
-        "Curl Cream", "Curl Mousse", "Extra Lace Wig Glue", "Ginger Conditioner"
-        , "Ginger Shampoo", "Lace Melting Spray", "Skin Protection", "Wax Stick"
+        "Curl Cream", "Hair Styling Mousse", "Hair Wax Stick", "Extra Lace Wig Glue", "Ginger Conditioner"
+        , "Ginger Shampoo", "Lace Melting Spray", "Skin Protection", "Hair Edge Control", "Hair Glue Liquid Gel",
+        "Lace Glue Remover Spray", "Leave In Conditioner Spray"
     ],
     // 产品列表
     productList: [
@@ -114,10 +115,10 @@ const data = {
         },
         {
             id: 5,
-            title: 'curl mousse',
+            title: 'hair styling mousse',
             price: '$3/pc',
-            category: 'Curl Mousse',
-            img: ["images/curlMousse/curl mousse1.jpg", "images/curlMousse/curl mousse2.jpg", "images/curlMousse/curl mousse3.jpg"],
+            category: 'Hair Styling Mousse',
+            img: ["images/hairStyleMousse/curl mousse1.jpg", "images/hairStyleMousse/curl mousse3.jpg"],
             detail: 'Ingredients:\n' +
                 'Aqua( Water), Olive Fruit Oil, Hydrogenated Castor oil, Acrylates, Copolymer, Cocamidopropyl Betaine, Peg-20 Diethicone, Disodium edta, Methylchloroisothiazolione, Fragrance.\n' +
                 '\n' +
@@ -227,10 +228,10 @@ const data = {
         },
         {
             id: 11,
-            title: 'wax stick',
+            title: 'hair wax stick',
             price: '$3/pc',
-            category: 'Wax Stick',
-            img: ["images/waxStick/wax stick1.jpg", "images/waxStick/wax stick2.jpg"],
+            category: 'Hair Wax Stick',
+            img: ["images/hairWaxStick/wax stick1.jpg", "images/hairWaxStick/wax stick2.jpg"],
             detail: 'Ingredients: \n' +
                 'Aqua,Petrolatum,Glycerin,Glyceryl,StearateSE,Beeswax,Kaolin,Microcrystalline,wax,Cyclopentasiloxane,Parfum,Methylparaben.\n' +
                 '\n' +
@@ -244,6 +245,83 @@ const data = {
                 ' Apply the stick directly on the hair to smooth and tame fly away and baby hairs. You can also rub a small amount of wax between finger tips and apply for texture, hold & shine.\n' +
                 '\n' +
                 'Batch No. 0112\n' +
+                'Made in China'
+        }, {
+            id: 12,
+            title: 'hair glue liquid gel',
+            price: '$3/pc',
+            category: 'Hair Glue Liquid Gel',
+            img: ["images/hairGlueLiquidGel/glue gel1.jpg", "images/hairGlueLiquidGel/glue gel2.jpg"],
+            detail: 'Directions:\n' +
+                'Clean hairline and use skin protection. Apply glue gel along clean hairline, let sit,and apply 2-3 layers then place on hairline and press in place. \n' +
+                '\n' +
+                'Ingredients:\n' +
+                'Aqua( Water), Acrylates Copolymer, Alcohol, DMDM Hydatoin, Polysorbate 20, Fragrance.\n' +
+                '\n' +
+                'Batch No.:0110\n' +
+                'Made in China'
+        }
+        , {
+            id: 13,
+            title: 'hair edge control',
+            price: '$3/pc',
+            category: 'Hair Edge Control',
+            img: ["images/hairEdgeControl/hair edge control1.jpg", "images/hairEdgeControl/hair edge control2.jpg"],
+            detail: 'Ingredients: \n' +
+                'Aqua,Glycerol, Vitamin E, Vegetable Amino Acids, Dexpanthenol, Beeswax, VP/VA cOPOLYMER, DMDMHydantion, Fragrance.\n' +
+                '\n' +
+                'Directions:\n' +
+                ' Apply a small amount to clean hair. A little will take you far! Use a comb, edge brush or finger to achieve desired look and style.\n' +
+                '\n' +
+                'Batch No. 0111\n' +
+                'Made in China'
+        }
+        ,
+        {
+            id: 14,
+            title: 'lace glue remover spray',
+            price: '$3/pc',
+            category: 'Lace Glue Remover Spray',
+            img: ["images/laceGlueRemover/Lace remover spray1.jpg", "images/laceGlueRemover/Lace remover spray2.jpg"],
+            detail: 'Directions:\n' +
+                'Apply to spray of your lace directly on adhesive.\n' +
+                'Rub the solution in circular motions and wait 1-5mins.\n' +
+                'Gently lift lace from natural hair.\n' +
+                'Clean lace and skin to remove any residue.\n' +
+                'Repent it if necessary.\n' +
+                '\n' +
+                'Ingredients:\n' +
+                'Hydrocarbons, Organic, Wetting agents, Citus oils.\n' +
+                '\n' +
+                'Cations:\n' +
+                'For external use only.\n' +
+                'Do a patch test on skin areas before use.\n' +
+                'Avoid contact with eyes.\n' +
+                'Keep out of reach for children.\n' +
+                '\n' +
+                'Batch No.:0114\n' +
+                'Made in China'
+        },
+        {
+            id: 15,
+            title: 'leave in conditioner spray',
+            price: '$3/pc',
+            category: 'Leave In Conditioner Spray',
+            img: ["images/leaveInConditionerSpray/leave in conditioner spray1.jpg", "images/leaveInConditionerSpray/leave in conditioner spray2.jpg"],
+            detail: 'Ingredients: \n' +
+                'Water, cyclopentasilxane, Dimethicone, Mineral oil, Glycerin, Polysorbate-20, Dimethiconeol, Phenoxyethanol, Fragrance, Methylparaben.\n' +
+                'Other trace ingredient:\n' +
+                'Ethylhexylglycerol.\n' +
+                '\n' +
+                'Cautions：\n' +
+                'For external use only.\n' +
+                'Please do a patch test on skin areas before use.\n' +
+                'Avoid contact with eyes.\n' +
+                'Keep our of reach for children.\n' +
+                'Directions: \n' +
+                'Shake the product well before use, and spray evenly on the hair at a distance of about 10cm from the hair. Dry and style as needed.\n' +
+                '\n' +
+                'Batch No. 0149\n' +
                 'Made in China'
         }
 

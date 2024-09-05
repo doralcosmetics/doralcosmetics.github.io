@@ -28,7 +28,7 @@
     <div id="ID-productDetail" class="layui-hide">
         <div class="layui-row" >
             <div class="layui-col-xs12 layui-col-sm12 layui-col-md5 layui-col-lg4 layui-col-lg-offset2 layui-col-md-offset1">
-                <div id="ID-carousel-container" style="width: 100%;height: 100%">
+                <div id="ID-carousel-container" class="my-commodity-image-carousel">
                     <div class="layui-carousel" id="ID-carousel-image" style="width: 100%;height: 100%">
                         <div carousel-item id="ID-carousel-image-list"  style="width: 100%;height: 100%">
 
@@ -68,7 +68,7 @@
              onclick="changeFrameSrc('product.html?id={{item.id}}')">
             <img alt="" src="{{item.img[0]}}"/>
             <h3>{{item.title}}</h3>
-            <h4>Price：<span class="my-price">{{item.price}}</span></h4>
+<!--            <h4>Price：<span class="my-price">{{item.price}}</span></h4>-->
         </div>
         {{# }); }}
     </div>
@@ -100,7 +100,6 @@
     layui.use(function () {
         const carousel = layui.carousel;
         const laytpl = layui.laytpl;
-        const rate = layui.rate;
         const util = layui.util;
         const device = layui.device();
         const layer = layui.layer;
@@ -162,17 +161,11 @@
 
         function renderCarousel(imageList) {
 
-            const carouselContainer = $('#ID-carousel-container');
 
             const carouselItemTpl = $('#ID-carouselItem').html(); // 获取模板字符
             const elemView = $('#ID-carousel-image-list'); // 视图对象
 
 
-            if (isMobileDevice()) {
-                carouselContainer.height(320)
-            } else {
-                carouselContainer.height(465)
-            }
 
             // 渲染并输出结果
             laytpl(carouselItemTpl).render(imageList, function (str) {
