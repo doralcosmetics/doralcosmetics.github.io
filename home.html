@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guangzhou Doral Cosmetics Co., Ltd.</title>
-    <link href="//unpkg.com/layui@2.9.13/dist/css/layui.css" rel="stylesheet">
+    <link href="layui/css/layui.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
@@ -32,15 +32,15 @@
     </div>
 
     <!--- 反馈 -->
-    <div  class="layui-hide">
-        <div>
-            <fieldset class="layui-elem-field layui-field-title">
-                <legend>Feedback</legend>
-            </fieldset>
-        </div>
-        <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-feedback">
-        </div>
-    </div>
+<!--    <div  class="layui-hide">-->
+<!--        <div>-->
+<!--            <fieldset class="layui-elem-field layui-field-title">-->
+<!--                <legend>Feedback</legend>-->
+<!--            </fieldset>-->
+<!--        </div>-->
+<!--        <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-feedback">-->
+<!--        </div>-->
+<!--    </div>-->
 
 
 
@@ -51,18 +51,16 @@
         </fieldset>
     </div>
 
-    <div style="text-align: center;padding: 16px 16px 70px;">
-
-
+    <div class="my-contact">
         <a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img
-                src="images/logo/facebook.png" style="width: 30px;height: 30px" title="facebook"></img></a>
+                src="images/logo/facebook_2.png" title="facebook"></img></a>
         <a href="mailto:Doralcosmetics@163.com" target="_blank"><img
-                src="images/logo/gmail.png" title="gmail"></img></a>
+                src="images/logo/gmail_2.png" title="gmail"></img></a>
         <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img
-                src="images/logo/whatsapp.png" title="WhatsApp"></img></a>
+                src="images/logo/whatsapp_2.png" title="WhatsApp"></img></a>
 
         <a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img
-                src="images/logo/instagram-fill.png" title="Instagram"></img></a>
+                src="images/logo/instagram_2.png" title="Instagram"></img></a>
 
         <br/>
         <br/>
@@ -102,7 +100,7 @@
 </script>
 
 
-<script src="//unpkg.com/layui@2.9.13/dist/layui.js"></script>
+<script src="layui/layui.js"></script>
 <script src="js/index.js"></script>
 <script src="js/data.js"></script>
 <script>
@@ -110,14 +108,11 @@
         const carousel = layui.carousel;
         const laytpl = layui.laytpl;
         const rate = layui.rate;
-        const util = layui.util;
         const device = layui.device();
-
 
         renderCarousel()
         renderProduct()
         renderFeedback()
-
         renderContact()
 
 
@@ -146,7 +141,10 @@
         function renderProduct() {
             const productItemTpl = $('#ID-productItem').html(); // 获取模板字符
             const elemView = $('#ID-flow-product'); // 视图对象
-            const productList = data.productList.slice(0, 12);
+            const productList = data.productList.
+                filter(item=>{
+                return data.homeProductList.includes(item.id)
+            });
 
 
             // 渲染并输出结果

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guangzhou Doral Cosmetics Co., Ltd.</title>
-    <link href="//unpkg.com/layui@2.9.13/dist/css/layui.css" rel="stylesheet">
+    <link href="layui/css/layui.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
 </head>
 <body style="overflow: hidden;">
@@ -16,6 +16,7 @@
     <ul class="layui-nav layui-bg-gray my-nav">
         <li class="layui-nav-item layui-this"><a lay-href="home.html">Home</a></li>
         <li class="layui-nav-item"><a lay-href="product.html">Products</a></li>
+<!--        <li class="layui-nav-item"><a lay-href="inquiry.html">Inquiry<span id="ID-inquiryNumber" class="layui-badge layui-hide"></span></a></li>-->
         <li class="layui-nav-item"><a lay-href="aboutUs.html">About US</a></li>
     </ul>
 </div>
@@ -25,15 +26,38 @@
 </div>
 
 
-<script src="//unpkg.com/layui@2.9.13/dist/layui.js"></script>
+<script src="layui/layui.js"></script>
 <script src="js/index.js"></script>
 <script src="js/data.js"></script>
 
 <script>
+    function openInquiry() {
+        let width = '400px';
+        if (isMobileDevice()) {
+            width = '100%'
+        }
 
+        layer.open({
+            type: 2,
+            title: 'Inquiry List',
+            offset: 'r',
+            anim: 'slideLeft',
+            area: [width, '100%'],
+            shade: 0.1,
+            shadeClose: true,
+            id: 'ID-demo-layer-direction-r',
+            content: 'inquiry.html',
+            btn:['Delete All','Close'],
+            yes: function(index, layero){
+                var iframeWin =  window[layero.find('iframe')[0]['name']];
+                iframeWin.deleteAll()
+            },
+
+        });
+    }
     layui.use(function () {
-
         const util = layui.util;
+        var layer = layui.layer;
         $(".layui-nav").on('click', "*[lay-href]",function (){
             changeFrameSrc($(this).attr('lay-href'))
         })
@@ -47,22 +71,36 @@
         renderBar();
 
 
+
+
         function renderBar() {
             // 自定义固定条
             util.fixbar({
-                bars: [{ // 定义可显示的 bar 列表信息 -- v2.8.0 新增
+                bars: [
+                    {
+                        type: 'Instagram',
+                        content: '<div onclick="openInquiry()" class="my-toolbar-inquiry">' +
+                            '<img alt="" src="images/shoppingCart.png" title="inquiry"/>' +
+                            '<span id="ID-inquiryNumber" class="layui-badge layui-hide"></span></div>',
+
+                    },
+                    {
                     type: 'facebook',
-                    content: '<a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img  src="images/logo/facebook.png" title="facebook"></img></a>'
+                    content: '<a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr">' +
+                        '<img alt="" src="images/logo/facebook_2.png" title="facebook"/></a>'
                 }, {
                     type: 'gmail',
-                    content: ' <a href="mailto:Doralcosmetics@163.com" target="_blank"><img src="images/logo/gmail.png" title="gmail"></img></a>'
+                    content: ' <a href="mailto:Doralcosmetics@163.com?body=nihao&subject=shop" target="_blank">' +
+                        '<img alt="" src="images/logo/gmail_2.png" title="gmail"/></a>'
                 }, {
                     type: 'WhatsApp',
-                    content: '  <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img  src="images/logo/whatsapp.png" title="WhatsApp"></img></a>',
+                    content: '  <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank">' +
+                        '<img alt="" src="images/logo/whatsapp_2.png" title="WhatsApp"/></a>',
 
                 }, {
                     type: 'Instagram',
-                    content: '<a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img  src="images/logo/instagram-fill.png" title="Instagram"></img></a>',
+                    content: '<a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">' +
+                        '<img alt="" src="images/logo/instagram_2.png" title="Instagram"/></a>',
 
                 }],
                 default: true,
@@ -71,6 +109,18 @@
 
         }
     })
+
+    function inquiryNumber() {
+        const inquiryNumber = $(`#ID-inquiryNumber`)
+        const data = getInquiryData();
+        if (data != null && data.data && data.data.length > 0) {
+            inquiryNumber.removeClass('layui-hide')
+            inquiryNumber.html(data.data.length)
+        }else {
+            inquiryNumber.addClass('layui-hide')
+        }
+    }
+    setInterval(inquiryNumber, 500)
 
 
 </script>

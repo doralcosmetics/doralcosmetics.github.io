@@ -6,19 +6,19 @@ const data = {
     },
     // 分类
     category: [
-        "Braid Gel", "Braid Mousse", "Braid Sheen Spray",
-        "Curl Cream", "Hair Styling Mousse", "Hair Wax Stick", "Extra Lace Wig Glue", "Ginger Conditioner"
-        , "Ginger Shampoo", "Lace Melting Spray", "Skin Protection", "Hair Edge Control", "Hair Glue Liquid Gel",
-        "Lace Glue Remover Spray", "Leave In Conditioner Spray"
+        "Hair Care","Hair Styling","Wig Care","Accessories"
     ],
     // 产品列表
     productList: [
         {
             id: 1,
             title: 'braid gel',
-            price: '$3/pc',
-            category: 'Braid Gel',
+            category: 'Hair Styling',
             img: ["images/braidGel/braid gel1.jpg", "images/braidGel/braid gel2.jpg"],
+            sku:{
+                volume:['250ml / 8.7oz']
+            },
+            number: '0114',
             detail: 'Ingredients:\n' +
                 'Aqua,(Water), Alcohol Ethoxylate, Ceteareth-25, ' +
                 'Dimethicone, Calodendrum Capense Nut Oil, Squalane,' +
@@ -41,9 +41,12 @@ const data = {
         }, {
             id: 2,
             title: 'braid mousse',
-            price: '$3/pc',
-            category: 'Braid Mousse',
-            img: ["images/braidMousse/braid mousse1.jpg", "images/braidMousse/braid mousse2.jpg", "images/braidMousse/braid mousse3.jpg"],
+            sku:{
+                volume:['150ml / 5.07oz']
+            },
+            number: '0118',
+            category: 'Wig Care',
+            img: ["images/braidMousse/braid mousse1.jpg", "images/braidMousse/braid mousse2.jpg"],
             detail: 'Ingredients:\n' +
                 'Aqua (Water),Acrylates/VP\n' +
                 'Copolymer,Cocamidopropy Betaine,\n' +
@@ -70,8 +73,12 @@ const data = {
         {
             id: 3,
             title: 'braid sheen spray',
-            price: '$3/pc',
-            category: 'Braid Sheen Spray',
+
+            sku:{
+                volume:['120ml / 4.1oz']
+            },
+            number: '0115',
+            category: 'Wig Care',
             img: ["images/braidSheenSpray/braid sheen spray1.jpg", "images/braidSheenSpray/braid sheen spray2.jpg"],
             detail: '\n' +
                 'Ingredients: \n' +
@@ -99,8 +106,12 @@ const data = {
         {
             id: 4,
             title: 'curl cream',
-            price: '$3/pc',
-            category: 'Curl Cream',
+
+            sku:{
+                volume:['250ml / 8.8oz']
+            },
+            number: '0146',
+            category: 'Hair Care',
             img: ["images/curlCream/curl cream1.jpg", "images/curlCream/curl cream2.jpg"],
             detail: 'Ingredients:\n' +
                 'Aqua( Water), PVP, Glycerin, Cetearech, Propylene Glycol USP Grade, Mineral Oil, Parfum, Methylparaben, Phenoxyethanol.\n' +
@@ -116,9 +127,13 @@ const data = {
         {
             id: 5,
             title: 'hair styling mousse',
-            price: '$3/pc',
-            category: 'Hair Styling Mousse',
-            img: ["images/hairStyleMousse/curl mousse1.jpg", "images/hairStyleMousse/curl mousse3.jpg"],
+
+            sku:{
+                volume:['200ml / 5.07oz']
+            },
+            number: '0119',
+            category: 'Hair Styling',
+            img: ["images/hairStyleMousse/curl hair mousse1.jpg", "images/hairStyleMousse/curl mousse2.jpg"],
             detail: 'Ingredients:\n' +
                 'Aqua( Water), Olive Fruit Oil, Hydrogenated Castor oil, Acrylates, Copolymer, Cocamidopropyl Betaine, Peg-20 Diethicone, Disodium edta, Methylchloroisothiazolione, Fragrance.\n' +
                 '\n' +
@@ -136,9 +151,13 @@ const data = {
         },
         {
             id: 6,
-            title: 'extra lace wig glue',
-            price: '$3/pc',
-            category: 'Extra Lace Wig Glue',
+            title: 'lace glue',
+
+            sku:{
+                volume:['38ml / 1.3oz']
+            },
+            number: '0113',
+            category: 'Wig Care',
             img: ["images/extraLaceWigGlue/extra lace wig glue1.jpg", "images/extraLaceWigGlue/extra lace wig glue2.jpg"],
             detail: 'Ingredients:\n' +
                 'Polyacrylate Rubber Copolymer, Filler(Sodium Bicarbonate), Solvent ethanol, Surfactants(Sodium dodecyldiphenyl ether disulfonate.\n' +
@@ -161,8 +180,12 @@ const data = {
         {
             id: 7,
             title: 'ginger conditioner',
-            price: '$3/pc',
-            category: 'Ginger Conditioner',
+            category: 'Hair Care',
+
+            sku:{
+                volume:['500ml / 16.91oz']
+            },
+            number: '0127',
             img: ["images/gingerConditioner/ginger conditioner1.jpg"],
             detail: 'ingredients :\n' +
                 'Water, Cetearyl Alcohol, Steartrimonium Choride Alcohol, Butylene Glycol, Methylparaben,  Dimethicone, Curcuma Longa(turmeric), Root Extract, Guar Hydroxypropyltrimonium Chloride,Cyclopentasiloxane, Fragrance, Zingiber Officinale(ginger) Root Extract, Citric Acid, Phenoxyethsnol, Ci 19140, Maenium Nitrate, Ci 15985, Methylchloroisothiazolinone, Magnesium Chloride, Methylisothiazolinone.\n' +
@@ -173,8 +196,12 @@ const data = {
         {
             id: 8,
             title: 'ginger shampoo',
-            price: '$3/pc',
-            category: 'Ginger Shampoo',
+
+            sku:{
+                volume:['500ml / 16.91oz']
+            },
+            number: '0126',
+            category: 'Hair Care',
             img: ["images/gingerShampoo/ginger shampoo1.jpg"],
             detail: 'Ingredients:\n' +
                 'Water, Platycladus Orientalis Extract, Dioscorea Opposita Extract, Zingiber Officinale(ginger) Extract, Ligustrum Lucidum Extract, Taxillus Chinensis Extract, Cinnamomum Cassia Extract, Alcohol, Sodium Laureth Sulfate, Disodium Laureth Sulfosuccinate, Lauramidopropyl Betaine, Dimethicone, Glycol Stearate, Cocamide Dea, Stearyl Alcohol,  Phenoxyethanol, Propylparaben, Butylparaben, Methylparaben, Ethylparaben, Polyquaternium-10, Sodium Citrate, Fragrance, Sodium Oxide, Citric Acid.\n' +
@@ -185,8 +212,12 @@ const data = {
         {
             id: 9,
             title: 'lace melting spray',
-            price: '$3/pc',
-            category: 'Lace Melting Spray',
+            category: 'Hair Styling',
+
+            sku:{
+                volume:['130ml / 4.4oz']
+            },
+            number: '0125',
             img: ["images/laceMeltingSpray/lace melting spray1.jpg", "images/laceMeltingSpray/lace melting spray2.jpg"],
             detail: 'Lace melting spray is quick and easy wiginstall spray that is glueless and gentle on your hairline for everyday lace wig warers. It can be removed with water and does not leave a heavy residue.\n' +
                 '\n' +
@@ -206,9 +237,13 @@ const data = {
         {
             id: 10,
             title: 'skin protection',
-            price: '$3/pc',
-            category: 'Skin Protection',
-            img: ["images/skinProtection/skin protection1.jpg", "images/skinProtection/skin protection2.jpg", "images/skinProtection/skin protection3.jpg"],
+            category: 'Hair Care',
+
+            sku:{
+                volume:['60ml / 2oz']
+            },
+            number: '0132',
+            img: ["images/skinProtection/skin protection1.jpg", "images/skinProtection/skin protection2.jpg"],
             detail: 'Ingredients: Aqua(Water), Ethanol, Methyl Methacrylate, BOP, Cellulose.\n' +
                 '\n' +
                 'Directions:\n' +
@@ -229,8 +264,12 @@ const data = {
         {
             id: 11,
             title: 'hair wax stick',
-            price: '$3/pc',
-            category: 'Hair Wax Stick',
+            category: 'Hair Styling',
+
+            sku:{
+                volume:['75g / 2.7oz']
+            },
+            number: '0112',
             img: ["images/hairWaxStick/wax stick1.jpg", "images/hairWaxStick/wax stick2.jpg"],
             detail: 'Ingredients: \n' +
                 'Aqua,Petrolatum,Glycerin,Glyceryl,StearateSE,Beeswax,Kaolin,Microcrystalline,wax,Cyclopentasiloxane,Parfum,Methylparaben.\n' +
@@ -249,8 +288,12 @@ const data = {
         }, {
             id: 12,
             title: 'hair glue liquid gel',
-            price: '$3/pc',
-            category: 'Hair Glue Liquid Gel',
+            category: 'Wig Care',
+
+            sku:{
+                volume:['200ml / 6.8oz']
+            },
+            number: '0110',
             img: ["images/hairGlueLiquidGel/glue gel1.jpg", "images/hairGlueLiquidGel/glue gel2.jpg"],
             detail: 'Directions:\n' +
                 'Clean hairline and use skin protection. Apply glue gel along clean hairline, let sit,and apply 2-3 layers then place on hairline and press in place. \n' +
@@ -264,8 +307,12 @@ const data = {
         , {
             id: 13,
             title: 'hair edge control',
-            price: '$3/pc',
-            category: 'Hair Edge Control',
+            category: 'Hair Styling',
+
+            sku:{
+                volume:['100ml / 3.5oz']
+            },
+            number: '0111',
             img: ["images/hairEdgeControl/hair edge control1.jpg", "images/hairEdgeControl/hair edge control2.jpg"],
             detail: 'Ingredients: \n' +
                 'Aqua,Glycerol, Vitamin E, Vegetable Amino Acids, Dexpanthenol, Beeswax, VP/VA cOPOLYMER, DMDMHydantion, Fragrance.\n' +
@@ -275,13 +322,16 @@ const data = {
                 '\n' +
                 'Batch No. 0111\n' +
                 'Made in China'
-        }
-        ,
+        },
         {
             id: 14,
             title: 'lace glue remover spray',
-            price: '$3/pc',
-            category: 'Lace Glue Remover Spray',
+            category: 'Wig Care',
+
+            sku:{
+                volume:['120ml / 4.06oz']
+            },
+            number: '0114',
             img: ["images/laceGlueRemover/Lace remover spray1.jpg", "images/laceGlueRemover/Lace remover spray2.jpg"],
             detail: 'Directions:\n' +
                 'Apply to spray of your lace directly on adhesive.\n' +
@@ -305,8 +355,12 @@ const data = {
         {
             id: 15,
             title: 'leave in conditioner spray',
-            price: '$3/pc',
-            category: 'Leave In Conditioner Spray',
+            category: 'Hair Care',
+
+            sku:{
+                volume:['200ml']
+            },
+            number: '0149',
             img: ["images/leaveInConditionerSpray/leave in conditioner spray1.jpg", "images/leaveInConditionerSpray/leave in conditioner spray2.jpg"],
             detail: 'Ingredients: \n' +
                 'Water, cyclopentasilxane, Dimethicone, Mineral oil, Glycerin, Polysorbate-20, Dimethiconeol, Phenoxyethanol, Fragrance, Methylparaben.\n' +
@@ -323,9 +377,69 @@ const data = {
                 '\n' +
                 'Batch No. 0149\n' +
                 'Made in China'
-        }
+        },
+        {
+            id: 16,
+            title: 'lace tint spray',
+            category: 'Wig Care',
+
+            sku:{
+                volume:['100ml / 3.5oz'],
+                color: ['dark', 'lights', 'medium', 'lights warm']
+            },
+            number: '0126',
+            img: ["images/laceTintSpray/lace tint spray1 .jpg",
+                "images/laceTintSpray/dark.jpg",
+                "images/laceTintSpray/dark1.jpg",
+                "images/laceTintSpray/lights.jpg",
+                "images/laceTintSpray/lights 1.jpg",
+                "images/laceTintSpray/lights warm.jpg",
+                "images/laceTintSpray/lights warm 1.jpg",
+                "images/laceTintSpray/medium.jpg",
+                "images/laceTintSpray/medium 1.jpg",
+            ],
+            detail: 'Ingredients: Aqua(Water), Propylene Glycol, Sodium Hyaluronate, Polyamino Sugar Condensate, Myrothamnus Flabellifola Leaf/Stem Extract, Panthenol, Jojoba oil Peg-8 Esters, Butylene Glycol, Laurocapram, Hexylene Glycol, Phenoxyethanol,CI 77491, CI77499.\n' +
+                '\n' +
+                'Diretions:\n' +
+                '1). Shake your bottle well before use.\n' +
+                '2). Spray generously on your clean lace until the desired. Shade is achieved.\n' +
+                '3). Use a brush to evenly apply and spread the tint on your lace.\n' +
+                '4)Blow dry/air dry for 1-2 minutes until the tint has dried.\n' +
+                '\n' +
+                'Cautions:\n' +
+                'For external use only.\n' +
+                'Keep out of reach for children.\n' +
+                'Do not test on animals.\n' +
+                'If it gets in to the eyes please rinse eye with cool water.\n' +
+                '\n'
+        },
+        {
+            id: 17,
+            title: 'double side brushes',
+            category: 'Accessories',
+            img: ["images/doubleSideBrushes/brushes.jpg",
+                "images/doubleSideBrushes/brushes1.jpg","images/doubleSideBrushes/brushes2.jpg"],
+            detail: 'empty' }
+        ,
+        {
+            id: 18,
+            title: 'hair edge brushes',
+            category: 'Accessories',
+            img: ["images/hairEdgeBrushes/Hair edge brushes.jpg",],
+            detail: 'empty' }
+        ,
+        {
+            id: 19,
+            title: 'melting band with muff',
+            category: 'Accessories',
+            img: ["images/meltingBandWithMuff/1.jpg","images/meltingBandWithMuff/2.jpg"],
+            detail: 'empty' }
 
     ],
+
+    // 首页商品
+    homeProductList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+
     // 反馈
     feedbackList: [
         {productId: 7, img: ["images/gingerConditioner/ginger conditioner1.jpg"], content: "好评", score: 5},
@@ -337,7 +451,7 @@ const data = {
     ],
     // 关于，图片地址
     about: {
-        img: "images/gingerConditioner/ginger conditioner1.jpg",
+        img: "images/about us.jpg",
     },
     contact: {
         Address: 'China',

@@ -3,8 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <title>Guangzhou Doral Cosmetics Co., Ltd.</title>
-    <link href="//unpkg.com/layui@2.9.13/dist/css/layui.css" rel="stylesheet">
+    <link href="layui/css/layui.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <style>
+        /*
+         * 基于复选框和单选框的卡片风格多选组件
+         * 需要具备一些基础的 CSS 技能，以下样式均为外部自主实现。
+         */
+        /* 主体 */
+        .layui-form-checkbox > .lay-skin-checkcard,
+        .lay-skin-checkcard {
+            display: table;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #e5e5e5;
+            color: #000;
+            background-color: #fff !important;
+            margin-right: 8px;
+        }
+
+        .layui-form-checkbox > .lay-skin-checkcard > *,
+        .layui-form-radio > .lay-skin-checkcard > * {
+            /* display: table-cell; */ /* IE */
+            vertical-align: top;
+        }
+
+        /* 悬停 */
+        .layui-form-checkbox:hover > .lay-skin-checkcard,
+        .layui-form-radio:hover > .lay-skin-checkcard {
+            border-color: #16b777;
+        }
+
+        /* 选中 */
+        .layui-form-checked > .lay-skin-checkcard,
+        .layui-form-radioed[lay-skin="none"] > .lay-skin-checkcard {
+            color: #000;
+            border-color: #16b777;
+            background-color: rgb(22 183 119 / 10%) !important;
+            /* box-shadow: 0 0 0 3px rgba(22, 183, 119, 0.08); */
+        }
+
+        /* 禁用 */
+        .layui-checkbox-disabled > .lay-skin-checkcard,
+        .layui-radio-disabled > .lay-skin-checkcard {
+            box-shadow: none;
+            border-color: #e5e5e5 !important;
+            background-color: #eee !important;
+        }
+
+        /* card 布局 */
+        .lay-skin-checkcard-avatar {
+            padding-right: 8px;
+        }
+
+        .lay-skin-checkcard-detail {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .lay-skin-checkcard-header {
+            font-weight: 500;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .lay-skin-checkcard-description {
+            font-size: 13px;
+            color: #5f5f5f;
+        }
+
+        .layui-disabled .lay-skin-checkcard-description {
+            color: #c2c2c2 ! important;
+        }
+
+        /* 选中 dot-2 */
+        .layui-form-checked > .lay-check-dot-2:before,
+        .layui-form-radioed > .lay-check-dot-2:before {
+            position: absolute;
+            font-family: "layui-icon", serif;
+            content: "\e605";
+            color: #fff;
+            bottom: 4px;
+            right: 3px;
+            font-size: 9px;
+            z-index: 12;
+        }
+
+        .layui-form-checked > .lay-check-dot-2:after,
+        .layui-form-radioed > .lay-check-dot-2:after {
+            position: absolute;
+            content: "";
+            bottom: 2px;
+            right: 2px;
+            width: 0;
+            height: 0;
+            display: inline-block;
+            vertical-align: middle;
+            border-width: 10px;
+            border-style: dashed;
+            border-color: transparent;
+            border-radius: 6px 0;
+            border-right-color: #16b777;
+            border-right-style: solid;
+            border-bottom-color: #16b777;
+            border-bottom-style: solid;
+            overflow: hidden;
+        }
+
+        .layui-checkbox-disabled > .lay-check-dot-2:before,
+        .layui-radio-disabled > .lay-check-dot-2:before {
+            color: #eee !important;
+        }
+
+        .layui-checkbox-disabled > .lay-check-dot-2:after,
+        .layui-radio-disabled > .lay-check-dot-2:after {
+            border-bottom-color: #d2d2d2;
+            border-right-color: #d2d2d2;
+        }
+
+    </style>
+
 </head>
 <body>
 
@@ -26,8 +144,12 @@
     </div>
 
     <div id="ID-productDetail" class="layui-hide">
-        <div class="layui-row" >
-            <div class="layui-col-xs12 layui-col-sm12 layui-col-md5 layui-col-lg4 layui-col-lg-offset2 layui-col-md-offset1">
+        <div class="layui-show-md-block" style="height: 20px;display: none">
+
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-xs12 layui-col-sm12 layui-col-md5
+             layui-col-lg4 layui-col-lg-offset2 layui-col-md-offset1">
                 <div id="ID-carousel-container" class="my-commodity-image-carousel">
                     <div class="layui-carousel" id="ID-carousel-image" style="width: 100%;height: 100%">
                         <div carousel-item id="ID-carousel-image-list"  style="width: 100%;height: 100%">
@@ -37,11 +159,39 @@
                 </div>
             </div>
             <div class="layui-col-xs12 layui-col-sm12 layui-col-md5 layui-col-lg4">
+                <div class="my-product-detail layui-form">
+                    <div class=" layui-text">
+                        <h2 id="ID-productTitle"></h2>
+                        <h3 style="margin-top: 16px" id="ID-itemNumber"></h3>
+                        <!--                        <h3 style="margin-top: 16px">Price：<span class="my-price" id="ID-price"></span></h3>-->
+                    </div>
+                    <div class="my-sku" id="ID-sku" lay-filter="form-demo-skin">
+                        <p>Volume:</p>
+                        <div class="my-radio-group" id="ID-volumeContainer">
+                            <!--volume 容器-->
+                        </div>
+                        <p id="ID-color-tip">Color:</p>
+                        <div class="my-radio-group" id="ID-colorContainer">
+                            <!--color 容器-->
+                        </div>
+                    </div>
+
+                    <button class="layui-btn" type="submit" style="width: 100%" lay-submit lay-filter="addToInquiry">Add
+                        to Inquiry
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="layui-col-xs12 layui-col-sm12
+             layui-col-md10 layui-col-lg8 layui-col-lg-offset2 layui-col-md-offset1"
+            style="margin-top: 16px">
+                <fieldset class="layui-elem-field layui-field-title">
+                    <legend>Description</legend>
+                </fieldset>
                 <div>
                     <div class="my-product-detail layui-text">
-                        <h2 id="ID-productTitle"></h2>
-                        <h3 style="margin-top: 16px">Price：<span class="my-price" id="ID-price"></span></h3>
-                        <div style="white-space: pre-line;width: 100%">
+                        <div style="white-space: pre-line;width: 100%;font-size: 20px">
                             <p id="ID-detail"></p>
                         </div>
                     </div>
@@ -49,11 +199,29 @@
 
             </div>
         </div>
+
     </div>
 
 
 </div>
 
+<script id="ID-radioItem" type="text/html">
+    {{# layui.each(d.data, function(index, item){ }}
+    <div class="my-radio">
+        {{# if(index === 0){ }}
+        <input type="radio" name="{{d.name}}" value="{{item}}" checked lay-skin="none">
+        {{# } else {}}
+        <input type="radio" name="{{d.name}}" value="{{item}}" lay-skin="none">
+        {{# } }}</input>
+
+        <div lay-radio class="lay-skin-checkcard lay-check-dot-2">
+            <div class="lay-skin-checkcard-detail">
+                <div class="lay-skin-checkcard-header">{{item}}</div>
+            </div>
+        </div>
+    </div>
+    {{# }); }}
+</script>
 
 <script id="ID-productItem" type="text/html">
     <div>
@@ -93,7 +261,7 @@
 </script>
 
 
-<script src="//unpkg.com/layui@2.9.13/dist/layui.js"></script>
+<script src="layui/layui.js"></script>
 <script src="js/index.js"></script>
 <script src="js/data.js"></script>
 <script>
@@ -103,11 +271,35 @@
         const util = layui.util;
         const device = layui.device();
         const layer = layui.layer;
+        const form = layui.form;
+
+
+        const productId = layui.url().search.id;
+
+        // 提交事件
+        form.on('submit(addToInquiry)', function (data) {
+            const field = data.field; // 获取表单字段值
+            // 显示填写结果，仅作演示用
+            // layer.alert(JSON.stringify(field), {
+            //     title: '当前填写的字段值'
+            // });
+            addInquiryData({
+                id:productId,
+                ...field
+            })
+            layer.msg('Add to Inquiry Successfully')
+
+
+            // 此处可执行 Ajax 等操作
+            // …
+            return false; // 阻止默认 form 跳转
+        });
 
         const productContainer = $("#ID-productContainer");
         const productDetail = $("#ID-productDetail");
+        const colorContainer = $("#ID-colorContainer");
+        const volumeContainer = $("#ID-volumeContainer");
 
-        const productId = layui.url().search.id;
 
         if (productId) {
             productDetail.removeClass("layui-hide")
@@ -117,24 +309,40 @@
             });
 
             $("#ID-productTitle").text(showProduct.title);
-            $("#ID-price").text(showProduct.price);
+            // $("#ID-price").text(showProduct.price);
             $("#ID-detail").text(showProduct.detail)
 
+            showProduct.number && $("#ID-itemNumber").text("Item No:" + showProduct.number);
+
             renderCarousel(showProduct.img)
+            if (showProduct.sku) {
+                showProduct.sku.color && renderRadioItem(colorContainer, "color", showProduct.sku.color);
+                showProduct.sku.volume && renderRadioItem(volumeContainer, "volume", showProduct.sku.volume)
+                !showProduct.sku.color && $("#ID-color-tip").addClass('layui-hide')
+            }else {
+                $("#ID-sku").addClass('layui-hide')
+            }
+
+
+            form.render();
 
 
         } else {
             productContainer.removeClass("layui-hide")
         }
 
-        if (!isMobileDevice()) {
-            productDetail.addClass("my-margin-top16")
-        }
-
 
         renderCategory();
 
-        renderProduct()
+        renderProduct();
+
+        function renderRadioItem(container, name, data) {
+            const radioItemTpl = $('#ID-radioItem').html();
+            // 渲染并输出结果
+            laytpl(radioItemTpl).render({name: name, data: data}, function (str) {
+                container.html(str);
+            });
+        }
 
         function renderCategory() {
             const productCategoryItemTpl = $('#ID-productCategoryItem').html();
@@ -190,11 +398,16 @@
                 },
                 success: function () {
                     // 切换为英文
-                    $(".layui-layer-photos-toolbar").find('[title="变换"]').attr('title',"Transform");
-                    $(".layui-layer-photos-toolbar").find('[title="放大"]').attr('title',"Zoom In");
-                    $(".layui-layer-photos-toolbar").find('[title="缩小"]').attr('title',"Zoom Out");
-                    $(".layui-layer-photos-toolbar").find('[title="还原"]').attr('title',"Reset");
-                    $(".layui-layer-photos-toolbar").find('[title="关闭"]').attr('title',"Close");
+
+                    let toolbar = $('.layui-layer-photos-toolbar');
+
+                    toolbar.find('[title="变换"]').attr('title',"Transform");
+                    toolbar.find('[title="放大"]').attr('title',"Zoom In");
+                    toolbar.find('[title="缩小"]').attr('title',"Zoom Out");
+                    toolbar.find('[title="还原"]').attr('title',"Reset");
+                    toolbar.find('[title="关闭"]').attr('title',"Close");
+                    $('.layui-layer-photos-footer').find('a').html("View Original")
+
                 },
             });
         }
@@ -221,6 +434,7 @@
 
 
     })
+
 </script>
 </body>
 </html>

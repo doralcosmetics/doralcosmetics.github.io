@@ -13,6 +13,9 @@ layui.use(['jquery'], function () {
 
 
 const sessionDataKey = "jessicaConfig";
+const inquiryDataKey = "jessicaInquiry";
+
+
 
 function changeFrameSrc(src) {
     $(parentFrame).attr("src", src)
@@ -29,3 +32,39 @@ function changeFrameSrc(src) {
         value: src,
     })
 }
+
+function getInquiryData() {
+    return layui.data(inquiryDataKey);
+}
+function setInquiryData(data) {
+    layui.data(inquiryDataKey,{
+        key:"data",
+        value: data,
+    });
+}
+
+function addInquiryData(data) {
+    let inquiryData = getInquiryData();
+    let newData = [];
+    if (inquiryData == null) {
+        newData.push(data)
+    }else {
+        newData = inquiryData.data?inquiryData.data:[];
+        let find = newData.find(function (item) {
+            return item.id === data.id && item.color === data.color && item.volume === data.volume;
+        });
+        if (find) {
+            find.count++
+        }else {
+            data.count = 1;
+            newData.push(data);
+        }
+
+    }
+
+    layui.data(inquiryDataKey,{
+        key:"data",
+        value: newData,
+    });
+}
+
