@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Guangzhou Doral Cosmetics Co., Ltd.</title>
     <link href="layui/css/layui.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/index.css?v=1.0.0" rel="stylesheet">
 </head>
 <body style="margin: initial">
 <div>
@@ -22,7 +22,7 @@
             <img alt="" src="{{item.img[0]}}">
             <div class="info">
 
-                <h2>{{item.title}}</h2>
+                <h3>{{item.title}}</h3>
                 <p>{{# if(item.volume !== undefined){ }}
                     Volume：{{item.volume}}
                     {{# } }}</p>
@@ -49,8 +49,8 @@
 </script>
 
 <script src="layui/layui.js"></script>
-<script src="js/index.js"></script>
-<script src="js/data.js"></script>
+<script src="js/index.js?v=1.0.0"></script>
+<script src="js/data.js?v=1.0.0"></script>
 <script>
     layui.use(function () {
         const layer = layui.layer;
@@ -126,6 +126,26 @@
         }, function () {
             layer.msg('cancel');
         });
+    }
+
+    // 发送邮件
+    function sendEmail() {
+        const inquiryData = getInquiryData()
+        let content = '';
+
+        if (inquiryData != null && inquiryData.data && inquiryData.data.length > 0) {
+
+            inquiryData.data.forEach(item => {
+                const find = data.productList.find(it => parseInt(item.id) === it.id)
+                content += ` Name:  ${find.title}\n Batch No:  ${find.number || '-'}\n Volume:  ${item.volume || '-'}\n Color:  ${item.color || '-'}\n Number:  ${item.count}\n\n`
+            })
+        }
+
+        const email = 'Doralcosmetics@163.com';
+        const subject = 'Product Inquiry';
+        const body = content;
+
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; // 打开邮件客户端
 
     }
 </script>

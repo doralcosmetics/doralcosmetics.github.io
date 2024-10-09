@@ -1,8 +1,8 @@
 const data = {
     // 首页头部轮播图
     head: {
-        pc: [{img: "images/pc/header3.jpg"}],
-        phone: [{img: "images/phone/header3.jpg"}]
+        pc: [{img: "images/pc/header1.jpg"}],
+        phone: [{img: "images/phone/header1.jpg"}]
     },
     // 分类
     category: [
@@ -12,7 +12,7 @@ const data = {
     productList: [
         {
             id: 1,
-            title: 'braid gel',
+            title: 'Braid gel',
             category: 'Hair Styling',
             img: ["images/braidGel/braid gel1.jpg", "images/braidGel/braid gel2.jpg"],
             sku:{
@@ -40,7 +40,7 @@ const data = {
                 'Made in China'
         }, {
             id: 2,
-            title: 'braid mousse',
+            title: 'Braid mousse',
             sku:{
                 volume:['150ml / 5.07oz']
             },
@@ -72,8 +72,7 @@ const data = {
         },
         {
             id: 3,
-            title: 'braid sheen spray',
-
+            title: 'Braid sheen spray',
             sku:{
                 volume:['120ml / 4.1oz']
             },
@@ -105,7 +104,7 @@ const data = {
         },
         {
             id: 4,
-            title: 'curl cream',
+            title: 'Curl cream',
 
             sku:{
                 volume:['250ml / 8.8oz']
@@ -126,14 +125,13 @@ const data = {
         },
         {
             id: 5,
-            title: 'hair styling mousse',
-
+            title: 'Hair styling mousse',
             sku:{
                 volume:['200ml / 5.07oz']
             },
             number: '0119',
             category: 'Hair Styling',
-            img: ["images/hairStyleMousse/curl hair mousse1.jpg", "images/hairStyleMousse/curl mousse2.jpg"],
+            img: ["images/hairStyleMousse/curl hair mousse1.jpg", "images/hairStyleMousse/curl hair mousse2.jpg"],
             detail: 'Ingredients:\n' +
                 'Aqua( Water), Olive Fruit Oil, Hydrogenated Castor oil, Acrylates, Copolymer, Cocamidopropyl Betaine, Peg-20 Diethicone, Disodium edta, Methylchloroisothiazolione, Fragrance.\n' +
                 '\n' +
@@ -151,8 +149,7 @@ const data = {
         },
         {
             id: 6,
-            title: 'lace glue',
-
+            title: 'Lace glue',
             sku:{
                 volume:['38ml / 1.3oz']
             },
@@ -179,9 +176,8 @@ const data = {
         },
         {
             id: 7,
-            title: 'ginger conditioner',
+            title: 'Ginger conditioner',
             category: 'Hair Care',
-
             sku:{
                 volume:['500ml / 16.91oz']
             },
@@ -195,8 +191,7 @@ const data = {
         },
         {
             id: 8,
-            title: 'ginger shampoo',
-
+            title: 'Ginger shampoo',
             sku:{
                 volume:['500ml / 16.91oz']
             },
@@ -211,7 +206,7 @@ const data = {
         },
         {
             id: 9,
-            title: 'lace melting spray',
+            title: 'Lace melting spray',
             category: 'Hair Styling',
 
             sku:{
@@ -236,7 +231,7 @@ const data = {
         },
         {
             id: 10,
-            title: 'skin protection',
+            title: 'Skin protection',
             category: 'Hair Care',
 
             sku:{
@@ -263,7 +258,7 @@ const data = {
         },
         {
             id: 11,
-            title: 'hair wax stick',
+            title: 'Hair wax stick',
             category: 'Hair Styling',
 
             sku:{
@@ -287,9 +282,8 @@ const data = {
                 'Made in China'
         }, {
             id: 12,
-            title: 'hair glue liquid gel',
+            title: 'Hair glue liquid gel',
             category: 'Wig Care',
-
             sku:{
                 volume:['200ml / 6.8oz']
             },
@@ -306,9 +300,8 @@ const data = {
         }
         , {
             id: 13,
-            title: 'hair edge control',
+            title: 'Hair edge control',
             category: 'Hair Styling',
-
             sku:{
                 volume:['100ml / 3.5oz']
             },
@@ -325,9 +318,8 @@ const data = {
         },
         {
             id: 14,
-            title: 'lace glue remover spray',
+            title: 'Lace glue remover spray',
             category: 'Wig Care',
-
             sku:{
                 volume:['120ml / 4.06oz']
             },
@@ -354,9 +346,8 @@ const data = {
         },
         {
             id: 15,
-            title: 'leave in conditioner spray',
+            title: 'Leave in conditioner spray',
             category: 'Hair Care',
-
             sku:{
                 volume:['200ml']
             },
@@ -380,9 +371,8 @@ const data = {
         },
         {
             id: 16,
-            title: 'lace tint spray',
+            title: 'Lace tint spray',
             category: 'Wig Care',
-
             sku:{
                 volume:['100ml / 3.5oz'],
                 color: ['dark', 'lights', 'medium', 'lights warm']
@@ -415,7 +405,8 @@ const data = {
         },
         {
             id: 17,
-            title: 'double side brushes',
+            title: 'Double side brushes',
+            number: '0375',
             category: 'Accessories',
             img: ["images/doubleSideBrushes/brushes.jpg",
                 "images/doubleSideBrushes/brushes1.jpg","images/doubleSideBrushes/brushes2.jpg"],
@@ -423,14 +414,16 @@ const data = {
         ,
         {
             id: 18,
-            title: 'hair edge brushes',
+            title: 'Hair edge brushes',
+            number: '0376',
             category: 'Accessories',
             img: ["images/hairEdgeBrushes/Hair edge brushes.jpg",],
             detail: 'empty' }
         ,
         {
             id: 19,
-            title: 'melting band with muff',
+            title: 'Melting band with muff',
+            number: '0377',
             category: 'Accessories',
             img: ["images/meltingBandWithMuff/1.jpg","images/meltingBandWithMuff/2.jpg"],
             detail: 'empty' }

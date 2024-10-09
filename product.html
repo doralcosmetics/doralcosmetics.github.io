@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Guangzhou Doral Cosmetics Co., Ltd.</title>
     <link href="layui/css/layui.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/index.css?v=1.0.0" rel="stylesheet">
     <style>
         /*
          * 基于复选框和单选框的卡片风格多选组件
@@ -131,19 +131,21 @@
 
 
     <!-- 商品列表-->
-    <div id="ID-productContainer" class="layui-hide">
-        <div>
-            <fieldset class="layui-elem-field layui-field-title">
-                <legend>Category</legend>
-            </fieldset>
+    <div id="ID-productContainer" class="layui-hide my-product-container">
+        <div class="navbar">
+            <div style="padding: 8px">
+                <h2>Category</h2>
+            </div>
+
+            <div class="my-product-category" id="ID-productCategory">
+            </div>
         </div>
-        <div class="my-product-category" id="ID-productCategory">
-        </div>
-        <div id="ID-productList">
+
+        <div id="ID-productList" class="content">
         </div>
     </div>
 
-    <div id="ID-productDetail" class="layui-hide">
+    <div id="ID-productDetail" class="layui-hide ">
         <div class="layui-show-md-block" style="height: 20px;display: none">
 
         </div>
@@ -230,7 +232,7 @@
         </fieldset>
     </div>
     {{# if(d.data.length !== 0){ }}
-    <div class="layui-row layui-col-space14 my-margin8">
+    <div class="layui-row layui-col-space14 my-margin8 my-flex my-flex-wrap">
         {{# layui.each(d.data, function(index, item){ }}
         <div class="layui-col-xs6 layui-col-sm4 layui-col-md2 layui-col-lg2 my-shop"
              onclick="changeFrameSrc('product.html?id={{item.id}}')">
@@ -262,8 +264,8 @@
 
 
 <script src="layui/layui.js"></script>
-<script src="js/index.js"></script>
-<script src="js/data.js"></script>
+<script src="js/index.js?v=1.0.0"></script>
+<script src="js/data.js?v=1.0.0"></script>
 <script>
     layui.use(function () {
         const carousel = layui.carousel;
@@ -275,6 +277,7 @@
 
 
         const productId = layui.url().search.id;
+        const searchKeyword = layui.url().search.keyword;
 
         // 提交事件
         form.on('submit(addToInquiry)', function (data) {
@@ -312,7 +315,7 @@
             // $("#ID-price").text(showProduct.price);
             $("#ID-detail").text(showProduct.detail)
 
-            showProduct.number && $("#ID-itemNumber").text("Item No:" + showProduct.number);
+            showProduct.number && $("#ID-itemNumber").text("Batch No:" + showProduct.number);
 
             renderCarousel(showProduct.img)
             if (showProduct.sku) {
@@ -329,12 +332,10 @@
 
         } else {
             productContainer.removeClass("layui-hide")
+            renderCategory();
+            renderProduct();
         }
 
-
-        renderCategory();
-
-        renderProduct();
 
         function renderRadioItem(container, name, data) {
             const radioItemTpl = $('#ID-radioItem').html();
@@ -359,7 +360,13 @@
             const elemView = $('#ID-productList');
             for (let i = 0; i < data.category.length; i++) {
                 const category = data.category[i];
-                const productList = data.productList.filter(item => item.category === category);
+                const productList = data.productList.filter(item => {
+
+                    if (searchKeyword !== undefined && searchKeyword.length > 0) {
+                        return item.category === category && item.title.toLowerCase().includes(decodeURI(searchKeyword).toLowerCase()) ;
+                    }
+                    return item.category === category;
+                });
                 // 渲染并输出结果
                 laytpl(productItemTpl).render({category: category, data: productList}, function (str) {
                     elemView.append(str);

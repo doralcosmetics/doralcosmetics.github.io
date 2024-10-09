@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guangzhou Doral Cosmetics Co., Ltd.</title>
     <link href="layui/css/layui.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/index.css?v=1.0.0" rel="stylesheet">
 </head>
 <body style="overflow: hidden;">
 <div class="my-header">
@@ -19,18 +19,43 @@
 <!--        <li class="layui-nav-item"><a lay-href="inquiry.html">Inquiry<span id="ID-inquiryNumber" class="layui-badge layui-hide"></span></a></li>-->
         <li class="layui-nav-item"><a lay-href="aboutUs.html">About US</a></li>
     </ul>
+    <div class="layui-layout-right my-nav"
+         style="height: 100%;padding-right: 16px;display: flex;align-items: center">
+        <div class="layui-form my-hidde-md">
+            <div class="layui-input-wrap">
+                <input type="text" lay-affix="search" lay-filter="search" lay-options="{split: true}"
+                       placeholder="Search…" class="layui-input" style="border-radius: 25px">
+            </div>
+
+        </div>
+        <div class="my-show-md" style="display: none">
+            <i class="layui-icon layui-icon-search" onclick="openSearch()" style="font-size: 20px; cursor: pointer;"></i>
+        </div>
+    </div>
 </div>
 
 <div class="my-content">
     <iframe title="frame" id="ID-frame" src="home.html" style="border: 0;height: 100%;width: 100%" scrolling="yes"  width="100%"></iframe>
 </div>
 
+<div id="ID-search-dialog" style="display: none">
+    <div class="layui-form" style="margin: 16px">
+        <div class="layui-input-wrap">
+            <input type="text" lay-affix="search" lay-filter="search" lay-options="{split: true}"
+                   placeholder="Search…" class="layui-input">
+        </div>
+    </div>
+</div>
+
 
 <script src="layui/layui.js"></script>
-<script src="js/index.js"></script>
-<script src="js/data.js"></script>
+<script src="js/index.js?v=1.0.0"></script>
+<script src="js/data.js?v=1.0.0"></script>
+
 
 <script>
+    let searchDialogIndex;
+
     function openInquiry() {
         let width = '400px';
         if (isMobileDevice()) {
@@ -47,17 +72,23 @@
             shadeClose: true,
             id: 'ID-demo-layer-direction-r',
             content: 'inquiry.html',
-            btn:['Delete All','Close'],
-            yes: function(index, layero){
+            btn:["Send Email",'Delete All','Close'],
+            btn1: function(index, layero){
+                var iframeWin =  window[layero.find('iframe')[0]['name']];
+                iframeWin.sendEmail()
+            },
+            btn2: function(index, layero){
                 var iframeWin =  window[layero.find('iframe')[0]['name']];
                 iframeWin.deleteAll()
-            },
+                return false
+            }
 
         });
     }
     layui.use(function () {
         const util = layui.util;
-        var layer = layui.layer;
+        const layer = layui.layer;
+        const form = layui.form;
         $(".layui-nav").on('click', "*[lay-href]",function (){
             changeFrameSrc($(this).attr('lay-href'))
         })
@@ -66,7 +97,17 @@
         if (historyUrl) {
             changeFrameSrc(historyUrl)
         }
-
+        form.on('input-affix(search)', function(data){
+            var elem = data.elem; // 输入框
+            var value = elem.value; // 输入框的值
+            if(!value){
+                value = ''
+            };
+            searchDialogIndex && layer.close(searchDialogIndex);
+            changeFrameSrc('product.html?keyword='+ value)
+            // 模拟搜索跳转
+            // location.href = '?keywords='+ value + '&_'+ new Date().getTime() +'#affix-custom';
+        });
 
         renderBar();
 
@@ -90,7 +131,7 @@
                         '<img alt="" src="images/logo/facebook_2.png" title="facebook"/></a>'
                 }, {
                     type: 'gmail',
-                    content: ' <a href="mailto:Doralcosmetics@163.com?body=nihao&subject=shop" target="_blank">' +
+                        content: ' <a href="mailto:Doralcosmetics@163.com?body=ddd%0Add&subject=shop" target="_blank">' +
                         '<img alt="" src="images/logo/gmail_2.png" title="gmail"/></a>'
                 }, {
                     type: 'WhatsApp',
@@ -119,6 +160,20 @@
         }else {
             inquiryNumber.addClass('layui-hide')
         }
+    }
+
+    function openSearch() {
+        searchDialogIndex = layer.open({
+            type: 1,
+            title: 'Search',
+            offset: 't',
+            anim: 'slideDown', // 从上往下
+            area: ['100%', '160px'],
+            shade: 0.1,
+            shadeClose: true,
+            id: 'ID-demo-layer-direction-t',
+            content: $('#ID-search-dialog')
+        });
     }
     setInterval(inquiryNumber, 500)
 

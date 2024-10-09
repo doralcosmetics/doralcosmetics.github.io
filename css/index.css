@@ -136,14 +136,14 @@
 
 .my-product-category {
     display: flex;
-    padding: 0 32px;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .my-product-category a {
-    font-size: 20px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 8px 8px;
 }
 
 .my-product-category a:hover {
@@ -178,7 +178,7 @@ a{
 
 .my-header-carousel {
     width: 100%;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 192 / 70;
 }
 
 .my-commodity-image-carousel {
@@ -214,18 +214,23 @@ a{
     display: flex;
 }
 
+.my-flex-wrap{
+    flex-wrap: wrap;
+}
+
 .my-inquiry-list {
     display: flex;
-    width: calc(100% - 48px);
+    width: calc(100% - 32px);
     height: 110px;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 8px;
     margin: 0 8px;
 
 }
 
-.my-inquiry-list:hover {
+.my-inquiry-list:hover,
+.my-inquiry-list:active {
     background-color: #b7b7b7;
     border-radius: 5px;
 }
@@ -281,4 +286,34 @@ a{
     top: 2px !important;
     right: 2px !important;
     font-size: 10px
+}
+
+.my-product-container{
+    display: flex;
+    margin: 0;
+}
+
+.navbar {
+    width: 130px;
+    /*background-color: #f0f0f0;*/
+    position: fixed; /* 固定位置 */
+    height: 100vh; /* 满高 */
+    overflow-y: auto; /* 使导航栏可滚动 */
+    border-right: 1px solid #f0f0f0;
+
+}
+.content {
+    margin-left: 130px; /* 给正文留出导航栏的空间 */
+    padding-left: 8px;
+    overflow-y: auto; /* 使正文可滚动 */
+
+}
+
+@media screen and (max-width: 970px) {
+    .my-hidde-md{
+        display: none !important;
+    }
+    .my-show-md{
+        display: block !important;
+    }
 }

@@ -26,10 +26,10 @@ function changeFrameSrc(src) {
             parentNavItem[i].classList.add('layui-this');
         }
     }
-
+    src = src.replace(/([&?])keyword=[^&]*(&|$)/, '\$1').replace(/&$/, '').replace(/\?$/, '');
     layui.sessionData(sessionDataKey,{
         key:"url",
-        value: src,
+        value: src
     })
 }
 
