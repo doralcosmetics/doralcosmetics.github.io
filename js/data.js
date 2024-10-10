@@ -435,12 +435,6 @@ const data = {
 
     // 反馈
     feedbackList: [
-        {productId: 7, img: ["images/gingerConditioner/ginger conditioner1.jpg"], content: "好评", score: 5},
-        {productId: 11, img: ["images/waxStick/wax stick1.jpg"], content: "好好评好评好评好评好评好评好评好评好评评", score: 5},
-        {productId: 3, img: ["images/braidSheenSpray/braid sheen spray1.jpg"], content: "好评", score: 5},
-        {productId: 8, img: ["images/gingerShampoo/ginger shampoo1.jpg"], content: "好好评好评好评好评好评好评好评好评好评评", score: 5},
-        {productId: 5, img: ["images/curlMousse/curl mousse1.jpg"], content: "好好评好评好评好评好评好评好评好评好评评", score: 5},
-        {productId: 6, img: ["images/extraLaceWigGlue/extra lace wig glue1.jpg"], content: "好评", score: 5},
     ],
     // 关于，图片地址
     about: {
