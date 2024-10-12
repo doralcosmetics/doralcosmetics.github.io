@@ -324,7 +324,7 @@ const data = {
                 volume:['120ml / 4.06oz']
             },
             number: '0114',
-            img: ["images/laceGlueRemover/Lace remover spray1.jpg", "images/laceGlueRemover/Lace remover spray2.jpg"],
+            img: ["images/laceGlueRemover/lace remover spray1.jpg", "images/laceGlueRemover/lace remover spray2.jpg"],
             detail: 'Directions:\n' +
                 'Apply to spray of your lace directly on adhesive.\n' +
                 'Rub the solution in circular motions and wait 1-5mins.\n' +
@@ -417,7 +417,7 @@ const data = {
             title: 'Hair edge brushes',
             number: '0376',
             category: 'Accessories',
-            img: ["images/hairEdgeBrushes/Hair edge brushes.jpg",],
+            img: ["images/hairEdgeBrushes/hair edge brushes.jpg",],
             detail: 'empty' }
         ,
         {
@@ -432,7 +432,6 @@ const data = {
 
     // 首页商品
     homeProductList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-
     // 反馈
     feedbackList: [
     ],
