@@ -51,7 +51,7 @@ function addInquiryData(data) {
     }else {
         newData = inquiryData.data?inquiryData.data:[];
         let find = newData.find(function (item) {
-            return item.id === data.id && item.color === data.color && item.volume === data.volume;
+            return item.id === data.id && item.color === data.color && item.volume === data.volume && item.scented === data.scented;
         });
         if (find) {
             find.count++

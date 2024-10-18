@@ -151,11 +151,14 @@ const data = {
             id: 6,
             title: 'Lace glue',
             sku:{
-                volume:['38ml / 1.3oz']
+                volume:['38ml / 1.3oz'],
+                scented:['Unscented', 'Strawberry scented', 'Watermelon scented'],
             },
             number: '0113',
             category: 'Wig Care',
-            img: ["images/extraLaceWigGlue/extra lace wig glue1.jpg", "images/extraLaceWigGlue/extra lace wig glue2.jpg"],
+            img: ["images/extraLaceWigGlue/extra lace wig glue1.jpg", "images/extraLaceWigGlue/extra lace wig glue2.jpg"
+            ,"images/extraLaceWigGlue/strawberry scented.jpg", "images/extraLaceWigGlue/watermelon scented.jpg",
+                "images/extraLaceWigGlue/top.jpg"],
             detail: 'Ingredients:\n' +
                 'Polyacrylate Rubber Copolymer, Filler(Sodium Bicarbonate), Solvent ethanol, Surfactants(Sodium dodecyldiphenyl ether disulfonate.\n' +
                 '\n' +
@@ -426,7 +429,35 @@ const data = {
             number: '0377',
             category: 'Accessories',
             img: ["images/meltingBandWithMuff/1.jpg","images/meltingBandWithMuff/2.jpg"],
-            detail: 'empty' }
+            detail: 'empty'
+        },
+        {
+            id: 20,
+            title: 'Lace adhesive pen',
+            number: '0138',
+            sku:{
+                volume:['5ml'],
+            },
+            category: 'Wig Care',
+            img: ['images/laceAdhesivePen/lace adhesive pen1.jpg',"images/laceAdhesivePen/lace adhesive pen2.jpg"],
+            detail: 'Ingredients:\n' +
+                'Polyacrylate Rubber Copolymer, Filler(Sodium Bicarbonate), Solvent ethanol, Surfactants(Sodium dodecyldiphenyl ether disulfonate.\n' +
+                '\n' +
+                'Directions:\n' +
+                '1).Clean hairline and spray with skin protect.\n' +
+                '2).Apply thin clear up to 2-4 layers of glue.\n' +
+                '3).Apply your lace and begin the melt down.\n' +
+                '4).Allow to cure for 24 hours before getting it wet.\n' +
+                '\n' +
+                'Cautions:\n' +
+                'For external use only.\n' +
+                'Please do a patch on skin areas before use.\n' +
+                'Avoid contact with eyes.\n' +
+                'Keep out of reach for children.\n' +
+                '\n' +
+                'Batch No. 0138\n' +
+                'Made in China\n'
+        },
 
     ],
 

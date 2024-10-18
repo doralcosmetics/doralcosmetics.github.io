@@ -176,6 +176,10 @@
                         <div class="my-radio-group" id="ID-colorContainer">
                             <!--color 容器-->
                         </div>
+                        <p id="ID-scented-tip">Scented:</p>
+                        <div class="my-radio-group" id="ID-scentedContainer">
+                            <!--scented 容器-->
+                        </div>
                     </div>
 
                     <button class="layui-btn" type="submit" style="width: 100%" lay-submit lay-filter="addToInquiry">Add
@@ -302,6 +306,7 @@
         const productDetail = $("#ID-productDetail");
         const colorContainer = $("#ID-colorContainer");
         const volumeContainer = $("#ID-volumeContainer");
+        const scentedContainer = $("#ID-scentedContainer");
 
 
         if (productId) {
@@ -321,7 +326,9 @@
             if (showProduct.sku) {
                 showProduct.sku.color && renderRadioItem(colorContainer, "color", showProduct.sku.color);
                 showProduct.sku.volume && renderRadioItem(volumeContainer, "volume", showProduct.sku.volume)
+                showProduct.sku.scented && renderRadioItem(scentedContainer, "scented", showProduct.sku.scented)
                 !showProduct.sku.color && $("#ID-color-tip").addClass('layui-hide')
+                !showProduct.sku.scented && $("#ID-scented-tip").addClass('layui-hide')
             }else {
                 $("#ID-sku").addClass('layui-hide')
             }

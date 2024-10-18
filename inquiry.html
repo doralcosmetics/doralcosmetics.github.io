@@ -24,10 +24,13 @@
 
                 <h3>{{item.title}}</h3>
                 <p>{{# if(item.volume !== undefined){ }}
-                    Volume：{{item.volume}}
+                    <span style="font-weight: bold">Volume：</span>{{item.volume}}
                     {{# } }}</p>
                 <p>{{# if(item.color !== undefined){ }}
-                    Color：{{item.color}}
+                    <span style="font-weight: bold">Color：</span>{{item.color}}
+                    {{# } }}</p>
+                <p>{{# if(item.scented !== undefined){ }}
+                    <span style="font-weight: bold">Scented：</span>{{item.scented}}
                     {{# } }}</p>
             </div>
         </div>
@@ -137,7 +140,18 @@
 
             inquiryData.data.forEach(item => {
                 const find = data.productList.find(it => parseInt(item.id) === it.id)
-                content += ` Name:  ${find.title}\n Batch No:  ${find.number || '-'}\n Volume:  ${item.volume || '-'}\n Color:  ${item.color || '-'}\n Number:  ${item.count}\n\n`
+                content += `Name: ${find.title}\n Batch No:  ${find.number || '-'}`
+                if (item.volume) {
+                 content += `\n Volume:  ${item.volume}`
+                }
+                if (item.color) {
+                    content += `\n Color:  ${item.color}`
+                }
+                if (item.scented) {
+                    content += `\n Scented: ${item.scented}`
+                }
+                content += `\n Number:  ${item.count}\n\n`
+
             })
         }
 
@@ -146,6 +160,7 @@
         const body = content;
 
         window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; // 打开邮件客户端
+
 
     }
 </script>
