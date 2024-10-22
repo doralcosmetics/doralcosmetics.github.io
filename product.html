@@ -127,9 +127,6 @@
 <body>
 
 <div>
-
-
-
     <!-- 商品列表-->
     <div id="ID-productContainer" class="layui-hide my-product-container">
         <div class="navbar">
@@ -205,11 +202,12 @@
 
             </div>
         </div>
-
     </div>
-
-
 </div>
+<iframe title="frame" id="ID-frame" src="footer.html"
+        class="my-footer layui-hide"
+        style="border: 0;" scrolling="no"></iframe>
+
 
 <script id="ID-radioItem" type="text/html">
     {{# layui.each(d.data, function(index, item){ }}
@@ -342,6 +340,8 @@
             renderCategory();
             renderProduct();
         }
+
+        $("#ID-frame").removeClass("layui-hide")
 
 
         function renderRadioItem(container, name, data) {

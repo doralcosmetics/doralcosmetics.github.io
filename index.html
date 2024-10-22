@@ -36,13 +36,49 @@
 
 <div class="my-content">
     <iframe title="frame" id="ID-frame" src="home.html" style="border: 0;height: 100%;width: 100%" scrolling="yes"  width="100%"></iframe>
+
 </div>
+
+
 
 <div id="ID-search-dialog" style="display: none">
     <div class="layui-form" style="margin: 16px">
         <div class="layui-input-wrap">
             <input type="text" lay-affix="search" lay-filter="search" lay-options="{split: true}"
                    placeholder="Search…" class="layui-input">
+        </div>
+    </div>
+</div>
+
+<div id="ID-mail-wrapper" style="display: none;">
+    <div style="padding:16px;">
+        <div class="layui-form" lay-filter="filter-test-layer" style="margin: 16px;">
+            <h2>If the mail app doesn't open automatically, please copy the email address and email content manually.</h2>
+            <br/>
+            <div class="demo-login-container">
+                <div class="layui-form-item layui-hide" id="ID-emailFormItem">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            <i class="layui-icon layui-icon-email"></i>
+                        </div>
+                        <input type="text" name="email" id="ID-input-email"
+                               lay-verify="required" autocomplete="off" class="layui-input" lay-affix="clear"/>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-hide" id="ID-contentFormItem">
+                    <div class="layui-input-wrap">
+                        <textarea name="content" id="ID-input-content"
+                                  autocomplete="off" class="layui-textarea">
+
+                        </textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item" id="ID-copyItem">
+                    <button class="layui-btn" lay-submit lay-filter="email">copy email</button>
+                    <button class="layui-btn" lay-submit lay-filter="content">copy content</button>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
@@ -55,40 +91,30 @@
 
 <script>
     let searchDialogIndex;
+    let form;
 
-    function openInquiry() {
-        let width = '400px';
-        if (isMobileDevice()) {
-            width = '100%'
-        }
 
-        layer.open({
-            type: 2,
-            title: 'Inquiry List',
-            offset: 'r',
-            anim: 'slideLeft',
-            area: [width, '100%'],
-            shade: 0.1,
-            shadeClose: true,
-            id: 'ID-demo-layer-direction-r',
-            content: 'inquiry.html',
-            btn:["Send Email",'Delete All','Close'],
-            btn1: function(index, layero){
-                var iframeWin =  window[layero.find('iframe')[0]['name']];
-                iframeWin.sendEmail()
-            },
-            btn2: function(index, layero){
-                var iframeWin =  window[layero.find('iframe')[0]['name']];
-                iframeWin.deleteAll()
-                return false
-            }
-
-        });
-    }
     layui.use(function () {
         const util = layui.util;
         const layer = layui.layer;
-        const form = layui.form;
+        form = layui.form;
+
+
+        const emailInput = $("#ID-input-email");
+        const contentInput = $("#ID-input-content");
+        emailInput.val(data.contact.email)
+        contentInput.val(getEmailContent())
+
+        const emailFormItem = $("#ID-emailFormItem");
+        const contentFormItem = $("#ID-contentFormItem");
+        const copyItem = $("#ID-copyItem");
+
+        if (!navigator.clipboard) {
+            emailFormItem.removeClass('layui-hide')
+            contentFormItem.removeClass('layui-hide')
+            copyItem.addClass('layui-hide')
+        }
+
         $(".layui-nav").on('click', "*[lay-href]",function (){
             changeFrameSrc($(this).attr('lay-href'))
         })
@@ -126,30 +152,81 @@
 
                     },
                     {
-                    type: 'facebook',
-                    content: '<a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr">' +
-                        '<img alt="" src="images/logo/facebook_2.png" title="facebook"/></a>'
-                }, {
-                    type: 'gmail',
+                        type: 'facebook',
+                        content: '<a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr">' +
+                            '<img alt="" src="images/logo/facebook_2.png" title="facebook"/></a>'
+                    }, {
+                        type: 'gmail',
                         content: ' <a href="mailto:Doralcosmetics@163.com?body=ddd%0Add&subject=shop" target="_blank">' +
-                        '<img alt="" src="images/logo/gmail_2.png" title="gmail"/></a>'
-                }, {
-                    type: 'WhatsApp',
-                    content: '  <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank">' +
-                        '<img alt="" src="images/logo/whatsapp_2.png" title="WhatsApp"/></a>',
+                            '<img alt="" src="images/logo/gmail_2.png" title="gmail"/></a>'
+                    }, {
+                        type: 'WhatsApp',
+                        content: '  <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank">' +
+                            '<img alt="" src="images/logo/whatsapp_2.png" title="WhatsApp"/></a>',
 
-                }, {
-                    type: 'Instagram',
-                    content: '<a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">' +
-                        '<img alt="" src="images/logo/instagram_2.png" title="Instagram"/></a>',
+                    }, {
+                        type: 'Instagram',
+                        content: '<a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">' +
+                            '<img alt="" src="images/logo/instagram_2.png" title="Instagram"/></a>',
 
-                }],
+                    }],
                 default: true,
                 css: {bottom: 60}
             });
 
         }
     })
+
+
+    function openEmail() {
+        layer.open({
+            type: 1,
+            title:'Info',
+            shade: false, // 不显示遮罩
+            content: $('#ID-mail-wrapper'), // 捕获的元素
+            success: function () {
+                form.render();
+                form.on('submit(email)', function(){
+                    copyText(data.contact.email)
+                })
+                form.on('submit(content)', function(){
+                    copyText(getEmailContent())
+                })
+            }
+        })
+    }
+
+    function openInquiry() {
+        let width = '400px';
+        if (isMobileDevice()) {
+            width = '100%'
+        }
+
+        layer.open({
+            type: 2,
+            title: 'Inquiry List',
+            offset: 'r',
+            anim: 'slideLeft',
+            area: [width, '100%'],
+            shade: 0.1,
+            shadeClose: true,
+            id: 'ID-demo-layer-direction-r',
+            content: 'inquiry.html',
+            btn:["Send Email",'Delete All','Close'],
+            btn1: function(index, layero){
+                openEmail()
+                var iframeWin =  window[layero.find('iframe')[0]['name']];
+                iframeWin.sendEmail()
+            },
+            btn2: function(index, layero){
+                var iframeWin =  window[layero.find('iframe')[0]['name']];
+                iframeWin.deleteAll()
+                return false
+            }
+
+        });
+    }
+
 
     function inquiryNumber() {
         const inquiryNumber = $(`#ID-inquiryNumber`)

@@ -472,6 +472,8 @@ const data = {
     },
     contact: {
         Address: 'China',
+        Phone: '+86 188 8888 8888',
+        email: 'Doralcosmetics@163.com'
     }
 
 }

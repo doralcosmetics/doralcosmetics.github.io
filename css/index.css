@@ -57,7 +57,7 @@
     position: absolute;
     top: 60px;
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 57px);
 }
 
 .layui-carousel img {
@@ -89,7 +89,7 @@
     padding-bottom: 8px;
 }
 
-.layui-fixbar img {
+.layui-fixbar img{
     width: 32px;
     height: 32px;
     margin-top: -4px;
@@ -115,13 +115,14 @@
     padding: 16px;
 }
 
-.my-about-content{
+.my-about-content {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
     padding-top: 16px;
 }
+
 .my-about-content .layui-text {
     display: flex;
     width: 100%;
@@ -165,14 +166,15 @@
     box-sizing: border-box;
 }
 
-.my-price{
+.my-price {
     color: #e4393c;
 }
 
-.my-margin-top16{
+.my-margin-top16 {
     margin-top: 16px;
 }
-a{
+
+a {
     cursor: pointer;
 }
 
@@ -214,7 +216,7 @@ a{
     display: flex;
 }
 
-.my-flex-wrap{
+.my-flex-wrap {
     flex-wrap: wrap;
 }
 
@@ -235,7 +237,7 @@ a{
     border-radius: 5px;
 }
 
-.my-inquiry-list+.my-inquiry-list{
+.my-inquiry-list + .my-inquiry-list {
     border-top: lightgray 1px solid;
 }
 
@@ -288,7 +290,7 @@ a{
     font-size: 10px
 }
 
-.my-product-container{
+.my-product-container {
     display: flex;
     margin: 0;
 }
@@ -299,9 +301,10 @@ a{
     position: fixed; /* 固定位置 */
     height: 100vh; /* 满高 */
     overflow-y: auto; /* 使导航栏可滚动 */
-    border-right: 1px solid #f0f0f0;
+    /*border-right: 1px solid #f0f0f0;*/
 
 }
+
 .content {
     margin-left: 130px; /* 给正文留出导航栏的空间 */
     padding-left: 8px;
@@ -310,10 +313,95 @@ a{
 }
 
 @media screen and (max-width: 970px) {
-    .my-hidde-md{
+    .my-hidde-md {
         display: none !important;
     }
-    .my-show-md{
+
+    .my-show-md {
         display: block !important;
+    }
+}
+
+.my-footer {
+    width: 100%;
+    height: 250px;
+    background-color: #1e9fff;
+
+}
+
+.h100{
+    height: 100%;
+}
+
+.my-footer-container {
+    width: 100%;
+    height: 100%;
+    color: white
+}
+
+.my-footer-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 16px;
+}
+
+.my-footer-item i {
+    font-size: 40px;
+}
+.my-footer-item div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px
+}
+
+.my-footer-item-title {
+    line-height: 40px;
+
+}
+.my-footer-contact{
+    flex-direction: row !important;
+    margin-left: unset !important;
+}
+.my-footer-contact img{
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+}
+.my-footer-contact img {
+    width: 32px;
+    height: 32px;
+    margin-top: -4px;
+}
+
+.my-footer-contact img[title="gmail"],
+.my-footer-contact img[title="WhatsApp"] {
+    width: 35px;
+    height: 35px;
+}
+
+
+.my-footer-contact-phone{
+    color: white !important;
+}
+.my-footer-contact-phone:hover{
+    color: #da5353 !important;
+}
+
+@media screen and (max-width: 768px) {
+    .my-footer-content {
+        height: 30%;
+    }
+    .my-footer-content p{
+        width: 75%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .my-footer-content {
+        height: 100%;
+    }
+    .justify-content-md {
+        justify-content: center;
     }
 }

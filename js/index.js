@@ -68,3 +68,45 @@ function addInquiryData(data) {
     });
 }
 
+function copyText(text) {
+    if (!navigator.clipboard) {
+        parent.layer.alert("Copying to clipboard is not supported");
+    } else {
+        navigator.clipboard.writeText(text).then(function() {
+            parent.layer.msg('the text has been copied to the clipboard',{
+                icon: 1
+            });
+        }, function(err) {
+            parent.layer.msg('the text has been copied to the clipboard',{
+                icon: 2
+            });
+        });
+    }
+
+}
+
+function getEmailContent() {
+    const inquiryData = getInquiryData()
+    let content = '';
+
+    if (inquiryData != null && inquiryData.data && inquiryData.data.length > 0) {
+
+        inquiryData.data.forEach(item => {
+            const find = data.productList.find(it => parseInt(item.id) === it.id)
+            content += `Name: ${find.title}\n Batch No:  ${find.number || '-'}`
+            if (item.volume) {
+                content += `\n Volume:  ${item.volume}`
+            }
+            if (item.color) {
+                content += `\n Color:  ${item.color}`
+            }
+            if (item.scented) {
+                content += `\n Scented: ${item.scented}`
+            }
+            content += `\n Number:  ${item.count}\n\n`
+
+        })
+    }
+    return content
+}
+

@@ -41,32 +41,14 @@
 <!--        <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-feedback">-->
 <!--        </div>-->
 <!--    </div>-->
-
-
-
-    <!--联系方式-->
-    <div>
-        <fieldset class="layui-elem-field layui-field-title">
-            <legend>Contact</legend>
-        </fieldset>
-    </div>
-
-    <div class="my-contact">
-        <a href="https://www.facebook.com/p/Guangzhou-Doral-Cosmetics-CO-Ltd-100072184969860/?paipv=0&eav=AfacvDJ_c_BIvoRxiQiGF9yEAT58SV6cr6Ur3Lp62ozoBdwgKO2DgdtI8szElKISSiA&_rdr"><img
-                src="images/logo/facebook_2.png" title="facebook"></img></a>
-        <a href="mailto:Doralcosmetics@163.com" target="_blank"><img
-                src="images/logo/gmail_2.png" title="gmail"></img></a>
-        <a href="https://wa.me/message/EED3VREMB5ZXE1" target="_blank"><img
-                src="images/logo/whatsapp_2.png" title="WhatsApp"></img></a>
-
-        <a href="https://instagram.com/haircareproduct_doral?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img
-                src="images/logo/instagram_2.png" title="Instagram"></img></a>
-
-        <br/>
-        <br/>
-        <h3 class="layui-hide">address:<span id="ID-address"></span></h3>
-    </div>
 </div>
+
+<iframe title="frame" id="ID-frame" src="footer.html"
+            class="my-footer layui-hide"
+            style="border: 0;" scrolling="no"></iframe>
+
+
+
 
 
 <script id="ID-carouselItem" type="text/html">
@@ -114,6 +96,8 @@
         renderProduct()
         renderFeedback()
         renderContact()
+
+        $("#ID-frame").removeClass("layui-hide")
 
 
         function renderContact() {
