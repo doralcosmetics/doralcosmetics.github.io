@@ -1,8 +1,8 @@
 const data = {
     // 首页头部轮播图
     head: {
-        pc: [{img: "images/pc/header1.jpg"}],
-        phone: [{img: "images/phone/header1.jpg"}]
+        pc: [{img: "images/pc/header1.jpg"},{img: "images/pc/header2.jpg"},{img: "images/pc/header3.png"}],
+        phone: [{img: "images/phone/header1.jpg"},{img: "images/pc/header2.jpg"},{img: "images/pc/header3.png"}]
     },
     // 分类
     category: [
