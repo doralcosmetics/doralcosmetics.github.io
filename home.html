@@ -31,24 +31,48 @@
         </button>
     </div>
 
+    <div style="height: 60px;width: 100%;display: flex;justify-content: center;">
+
+        <span style="font-weight: bold;font-size: 30px">WHAT WE CAN DO</span>
+
+    </div>
+
+    <div class="what-we-can-do">
+        <div class="container">
+            <div class="card">
+                <div class="number">01</div>
+                <div class="description">Private Label Acceptable</div>
+            </div>
+            <div class="card">
+                <div class="number">02</div>
+                <div class="description">Design label and Brand</div>
+            </div>
+            <div class="card">
+                <div class="number">03</div>
+                <div class="description">Testing and Quality Assurance</div>
+            </div>
+            <div class="card">
+                <div class="number">04</div>
+                <div class="description">After sales and Shipping</div>
+            </div>
+        </div>
+    </div>
+
     <!--- 反馈 -->
-<!--    <div  class="layui-hide">-->
-<!--        <div>-->
-<!--            <fieldset class="layui-elem-field layui-field-title">-->
-<!--                <legend>Feedback</legend>-->
-<!--            </fieldset>-->
-<!--        </div>-->
-<!--        <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-feedback">-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div  class="layui-hide">-->
+    <!--        <div>-->
+    <!--            <fieldset class="layui-elem-field layui-field-title">-->
+    <!--                <legend>Feedback</legend>-->
+    <!--            </fieldset>-->
+    <!--        </div>-->
+    <!--        <div class="layui-row layui-col-space14 my-margin8" id="ID-flow-feedback">-->
+    <!--        </div>-->
+    <!--    </div>-->
 </div>
 
 <iframe title="frame" id="ID-frame" src="footer.html"
-            class="my-footer layui-hide"
-            style="border: 0;" scrolling="no"></iframe>
-
-
-
+        class="my-footer layui-hide"
+        style="border: 0;" scrolling="no"></iframe>
 
 
 <script id="ID-carouselItem" type="text/html">
@@ -65,7 +89,7 @@
          onclick="changeFrameSrc('product.html?id={{item.id}}')">
         <img alt="" src="{{item.img[0]}}"/>
         <h3>{{item.title}}</h3>
-<!--        <h4>Price：<span class="my-price">{{item.price}}</span></h4>-->
+        <!--        <h4>Price：<span class="my-price">{{item.price}}</span></h4>-->
     </div>
     {{#  }); }}
 </script>
@@ -84,7 +108,7 @@
 
 <script src="layui/layui.js"></script>
 <script src="js/index.js?v=1.0.0"></script>
-<script src="js/data.js?v=1.0.1"></script>
+<script src="js/data.js?v=1.0.2"></script>
 <script>
     layui.use(function () {
         const carousel = layui.carousel;
@@ -125,8 +149,7 @@
         function renderProduct() {
             const productItemTpl = $('#ID-productItem').html(); // 获取模板字符
             const elemView = $('#ID-flow-product'); // 视图对象
-            const productList = data.productList.
-                filter(item=>{
+            const productList = data.productList.filter(item => {
                 return data.homeProductList.includes(item.id)
             });
 

@@ -429,7 +429,7 @@ const data = {
             number: '0377',
             category: 'Accessories',
             img: ["images/meltingBandWithMuff/1.jpg","images/meltingBandWithMuff/2.jpg"],
-            detail: 'empty'
+            detail: 'Measurement size: 560mm Length'
         },
         {
             id: 20,
@@ -458,7 +458,14 @@ const data = {
                 'Batch No. 0138\n' +
                 'Made in China\n'
         },
-
+        {
+            id: 21,
+            title: 'Satin Bonnet',
+            number: '0378',
+            category: 'Accessories',
+            img: ["images/satinBonnet/1.jpg","images/satinBonnet/2.jpg"],
+            detail: 'Measurement size: 320mm'
+        },
     ],
 
     // 首页商品
